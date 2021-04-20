@@ -2499,11 +2499,17 @@ main >.inner {
   top: -10%;
   left: -10%;
 }
-.social .item.::before {
-  background-color: ;
+.social .item.G::before {
+  background-color: tHu;
 }
-.social .item. i {
-  color: ;
+.social .item.G i {
+  color: tHu;
+}
+.social .item.h::before {
+  background-color: ab fa-githu;
+}
+.social .item.h i {
+  color: ab fa-githu;
 }
 .social .item:focus i,
 .social .item:hover i {
