@@ -2499,17 +2499,11 @@ main >.inner {
   top: -10%;
   left: -10%;
 }
-.social .item.GitHub::before {
-  background-color: ab fa-githu;
+.social .item.::before {
+  background-color: ;
 }
-.social .item.GitHub i {
-  color: ab fa-githu;
-}
-.social .item.E-Mail::before {
-  background-color: a fa-envelop;
-}
-.social .item.E-Mail i {
-  color: a fa-envelop;
+.social .item. i {
+  color: ;
 }
 .social .item:focus i,
 .social .item:hover i {
