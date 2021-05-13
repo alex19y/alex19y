@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>汇编语言程序设计 | 十九</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="" />
+    
+    <meta name="description" content="一、概述汇编语言语句和格式两种基本语句：指令语句和伪指令语句。  指令语句  每一指令语句在汇编时都产生一个指令代码（机器代码），执行该指令代码对应着机器的一种操作。  伪指令语句是控制汇编（翻译）过程的一些控制命令。在汇编时没有机器代码与之对应。   汇编语言语句是符合典型的汇编语言的四分段格式：    标号字段  (LABLE) 操作码字段  (OPCODE) 操作数字段  (OPRAND)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编语言程序设计">
+<meta property="og:url" content="http://yan19.top/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:site_name" content="十九">
+<meta property="og:description" content="一、概述汇编语言语句和格式两种基本语句：指令语句和伪指令语句。  指令语句  每一指令语句在汇编时都产生一个指令代码（机器代码），执行该指令代码对应着机器的一种操作。  伪指令语句是控制汇编（翻译）过程的一些控制命令。在汇编时没有机器代码与之对应。   汇编语言语句是符合典型的汇编语言的四分段格式：    标号字段  (LABLE) 操作码字段  (OPCODE) 操作数字段  (OPRAND)">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-13T14:53:33.000Z">
+<meta property="article:modified_time" content="2021-05-13T14:54:05.251Z">
+<meta property="article:author" content="alex19">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/" title="十九" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-汇编语言程序设计" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        汇编语言程序设计
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="article-date">
+       <time datetime="2021-05-13T14:53:33.000Z" itemprop="datePublished">2021-05-13</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="article-date">
+     <time datetime="2021-05-13T14:54:05.251Z" itemprop="dateModified">2021-05-13</time>
+  </a>
+</div>
+
+
+                
+
+                
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><h2 id="汇编语言语句和格式"><a href="#汇编语言语句和格式" class="headerlink" title="汇编语言语句和格式"></a>汇编语言语句和格式</h2><p>两种基本语句：指令语句和伪指令语句。</p>
+<ol>
+<li><p>指令语句 </p>
+<p>每一指令语句在汇编时都产生一个指令代码（机器代码），执行该指令代码对应着机器的一种操作。</p>
+</li>
+<li><p>伪指令语句<br>是控制汇编（翻译）过程的一些控制命令。在汇编时没有机器代码与之对应。</p>
+</li>
+</ol>
+<p>汇编语言语句是符合典型的汇编语言的四分段格式：</p>
+<table>
+<thead>
+<tr>
+<th><strong>标号字段</strong>  <strong>(LABLE)</strong></th>
+<th><strong>操作码字段</strong>  <strong>(OPCODE)</strong></th>
+<th><strong>操作数字段</strong>  <strong>(OPRAND)</strong></th>
+<th><strong>注释字段</strong>  <strong>(COMMENT)</strong></th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>标号与操作码间要有冒号“：”分隔；</li>
+<li>操作码与操作数的分界符是空格；</li>
+<li>双操作数间用逗号相隔；</li>
+<li>操作数和注释间的分界符用分号“；”。</li>
+<li>任何语句必须有操作码字段。</li>
+</ul>
+<blockquote>
+<p>下面是一段程序的四分段书写格式。<br>标号       操作码 操作数            注释字段<br>START：  MOV    A，   #00H              ；0→A<br>                 MOV    R1， #10                   ；10→R1<br>                 MOV    R2，  #00000011B       ；03H→R2<br>LOOP：   ADD    A，R2                   ；(A)+(R2)→A<br>                 DJNZ    R1，LOOP  ；R1减1不为零，则跳LOOP处<br>                 NOP<br>HERE：    SJMP    HERE</p>
+</blockquote>
+<h2 id="基本语法规则"><a href="#基本语法规则" class="headerlink" title="基本语法规则"></a>基本语法规则</h2><ol>
+<li><p><strong>标号字段</strong></p>
+<p>语句所在地址的标志符号，才能被访问。如标号“START”和“LOOP”等。有关标号规定如下：</p>
+<ol>
+<li>标号后必须跟冒号“：”； </li>
+<li>标号由1～8个ASCII码字符组成，第1个字符必须是字母；</li>
+<li>同一标号在一个程序中只能定义一次，不能重复定义；</li>
+<li>不能使用汇编语言已经定义的符号作为标号，如指令助记符、伪指令以及寄存器的符号名称等。</li>
+<li>标号的有无，取决于本程序中其他语句是否访问该语句。如无其他语句访问，则该语句前不需标号。</li>
+</ol>
+</li>
+<li><p><strong>操作码字段</strong></p>
+<p>规定了语句执行的操作，是汇编语言指令中唯一不能空缺的部分。</p>
+</li>
+<li><p><strong>操作数字段</strong></p>
+<p>指令的操作数或操作数地址。<br>在本字段中，操作数的个数因指令的不同而不同。通常有单操作数、双操作数和无操作数三种情况。<br>如果是多操作数，则操作数之间要以逗号隔开。</p>
+</li>
+</ol>
+<h2 id="常用伪指令"><a href="#常用伪指令" class="headerlink" title="常用伪指令"></a>常用伪指令</h2><p>​    在汇编语言源程序中应有向汇编程序发出的指示信息，告诉它如何完成汇编工作，这是通过伪指令来实现。<br>​    伪指令不属于指令系统中的汇编语言指令，它是程序员发给汇编程序的命令，也称为汇编程序控制命令。<br>​    只有在汇编前的源程序中才有伪指令。 “伪”体现在汇编后，伪指令没有相应的机器代码产生。<br>​    伪指令具有控制汇编程序的输入/输出、定义数据和符号、条件汇编、分配存储空间等功能。</p>
+<ol>
+<li><p><strong>ORG（ORiGin）汇编起始地址命令</strong><br>   源程序的开始，用一条ORG伪指令规定程序的起始地址。如果不用ORG，则汇编得到的目标程序将从0000H地址开始。例如：</p>
+<blockquote>
+<p>ORG    2000H<br>START：    MOV    A，#00H</p>
+<pre><code>           ……
+</code></pre>
+</blockquote>
+<p>规定标号START代表地址为2000H开始。<br>一源程序可多次用ORG指令，规定程序段的起始地址。但是，地址必须由小到大排列，且不能交叉、重叠。</p>
+</li>
+<li><p><strong>END(END of assembly)汇编终止命令</strong><br>源程序结束标志，终止源程序的汇编工作。<strong>整个源程序中只能有一条END命令，且位于程序的最后。</strong><br>如果END出现在程序中间，其后的源程序，将不进行汇编处理。</p>
+</li>
+<li><p><strong>EQU（EQUate）标号赋值命令</strong><br>用于给标号赋值。赋值后，标号值在整个程序有效。<br>例如：</p>
+<blockquote>
+<p>TEST：    EQU  2000H    </p>
+</blockquote>
+<p>表示TEST=2000H，汇编时，凡是遇到TEST时，均以2000H来代替。</p>
+</li>
+<li><p><strong>DB（Define Byte）定义数据字节命令</strong><br>用于从指定的地址开始，在程序存储器连续单元中定义字节数据。例如：</p>
+<p><code>ORG    2000H</code><br><code>DB    30H，40H，24，&quot;C&quot;，&quot;B&quot;</code></p>
+<p>汇编后<br><code>(2000H)=30H (2001H)=40H (2002H)=18H(十进制数24) (2003H)=43H(字符“C”的ASCII码) (2004H)= 42H(字符“B”的ASCII码)</code></p>
+<p>显然，DB功能是从指定单元开始定义（存储）若干字节，十进制数自然转换成十六进制数，字母按ASCII码存储。</p>
+</li>
+<li><p><strong>DW（Define Word）定义数据字命令</strong><br>该命令用于从指定的地址开始，在程序存储器的连续单元中定义16位的数据字。例如：<br><code>ORG    2000H DW    1246H，7BH，10</code><br>汇编后<br><code>(2000H)=12H        ；第1个字</code><br><code>(2001H)=46H</code><br><code>(2002H)=00H        ；第2个字</code></p>
+<p><code>(2003H)=7BH (2004H)=00H        ；第3个字 (2005H)=0AH</code></p>
+</li>
+<li><p><strong>DS（Define Storage）定义存储区命令</strong><br>从指定地址开始，保留指定数目的字节单元作为存储区，供程序运行使用。例如：</p>
+<pre><code>    `TABEL：DS    10`
+</code></pre>
+<p>表示从TABEL代表的地址开始，保留10个连续的地址单元。又例如：</p>
+<pre><code>    `ORG    2000H
+    DS    10 H`
+</code></pre>
+<p>表示从2000H地址开始，保留16个连续地址单元。</p>
+<p>注意：DB、DW和DS命令只能对程序存储器有效，不能对数据存储器使用。</p>
+</li>
+<li><p><strong>BIT 位定义命令</strong><br>用于给字符名称赋以位地址，位地址可以是绝对位地址，也可是符号地址。例如：</p>
+<pre><code>QA    BIT  P1.6
+</code></pre>
+<p>功能是把P1.6的位地址赋给变量QA。</p>
+</li>
+</ol>
+<h1 id="二、设计举例"><a href="#二、设计举例" class="headerlink" title="二、设计举例"></a>二、设计举例</h1><h2 id="子程序的设计"><a href="#子程序的设计" class="headerlink" title="子程序的设计"></a>子程序的设计</h2><ol>
+<li> 子程序的入口地址，前必须有标号。</li>
+<li>主程序调用子程序，是通过调用指令来实现。有两条子程序调用指令：<ol>
+<li><strong>绝对调用指令ACALL addr11</strong>。双字节，addr11指出了调用的目的地址，PC中16位地址中的高5位不变，被调用的子程序的首地址与绝对调用指令的下一条指令的高5位地址相同，即只能在同一个2KB区内。</li>
+<li><strong>长调用指令LCALL addr16。</strong>三字节，addr16为直接调用的目的地址，子程序可放在64KB程序存储器区任意位置</li>
+</ol>
+</li>
+<li>子程序必须用到堆栈，用来保护断点和现场保护。</li>
+<li>子程序返回主程序时，最后一条指令必须是RET指令，功能是把堆栈中的断点地址弹出送入PC指针中，从而实现子程序返回后从主程序断点处继续执行主程序。</li>
+<li>子程序可以嵌套，即主程序可调用子程序，子程序又可以调用另外的子程序。</li>
+</ol>
+<h3 id="子程序的基本结构"><a href="#子程序的基本结构" class="headerlink" title="子程序的基本结构"></a>子程序的基本结构</h3><p>典型的子程序的基本结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">MAIN：	…… 			；MAIN为主程序入口标号</span><br><span class="line">		……</span><br><span class="line">		LCALL  	SUB	；调用子程序SUB</span><br><span class="line">   		……</span><br><span class="line">		……</span><br><span class="line">子程序</span><br><span class="line">SUB：	PUSH  	PSW	；现场保护 	  </span><br><span class="line"> 		PUSH  	Acc		</span><br><span class="line">		子程序处理程序段</span><br><span class="line"></span><br><span class="line">		POP  	Acc	 ；现场恢复，注意要先进后出</span><br><span class="line">		POP  	PSW		 </span><br><span class="line">		RET		；最后一条指令必须为RET</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="查表程序设计"><a href="#查表程序设计" class="headerlink" title="查表程序设计"></a>查表程序设计</h3><p>查表程序是一种常用的程序。避免复杂的运算或转换过程，可完成数据补偿、修正、计算、转换等各种功能，具有程序简单、执行速度快等优点。<br>查表是根据自变量x，在表格寻找y，使y=f(x)。单片机中，数据表格存放于程序存储器内，在执行查表指令时，发出读程序存储器选通脉冲 。两条查表指令：</p>
+<ol>
+<li>MOVC     A，@A+DPTR</li>
+<li>MOVC     A，@A+PC</li>
+</ol>
+<p>两条指令的功能完全相同，具体使用有差别。<br><strong>指令“MOVC  A，@A+DPTR”</strong></p>
+<p> 把A的内容与DPTR的内容相加，结果为某一程序存储单元的地址，然后把该地址单元的内容送到A中。<br><strong>指令“MOVC  A，@A+PC”</strong> </p>
+<p>PC的内容与A的内容相加后所得的数作为某一程序存储器单元的地址，根据地址取出程序存储器相应单元中的内容送到累加器A，指令执行后，PC的内容不发生变化，仍指向该查表指令的下一条指令。<br><strong>优点</strong>：在于预处理较少且不影响其他特殊功能寄存器的值，不必保护其他特殊功能寄存器。</p>
+<p><strong>缺点</strong>：在于该表格只能存放在这条指令的地址X3X2X1X0以下00～FFH之中，即只能存放在地址范围X3X2X1X0 +1～ X3X2X1X0 +100H中，这就使得表格所在的程序空间受到了限制。</p>
+<blockquote>
+<p>设计一子程序，功能是根据累加器A中的数x（0～9之间）查x的平方表y，根据x的值查出相应的平方y。本例中的x和y均为单字节数。<br>    地 址                  子程序<br>Y3Y2Y1Y0        ADD     A，#01H<br>Y3Y2Y1Y0+2    MOVC  A，@A+PC<br>Y3Y2Y1Y0+3    RET<br>Y3Y2Y1Y0+4    DB  00H，01H，04H，09H，10H</p>
+<p>​                        DB  19H，24H，31H，40H，51H<br>​                        ；数0～9的平方表</p>
+</blockquote>
+<p><strong>指令“ADD  A，#01H”的作用</strong>是A中的内容加上 “01H”， “01H”即为查表指令与平方表之间的“RET”指令所占的字节数。加上 “01H”后，可保证PC指向表首，累加器A中原来的内容仅是从表首开始向下查找多少个单元。<br> <strong>在进入程序前，A的内容在00～09H间</strong>，如A为02H，它的平方为04H，可根据A的内容查出x的平方<br> 指令<strong>“MOVC  A，@A+DPTR”</strong> 应用范围较广，使用该指令时不必计算偏移量，优点是表格可以设在64KB程序存储器空间内的任何地方，而不像“MOVC  A，@A+PC”那样只设在PC下面的256个单元中，所以使用较方便。</p>
+<p>如果DPTR已被使用，则在查表前必须保护DPTR，且结束后恢复DPTR，上述例子可改成如下形式：</p>
+<blockquote>
+<p>​                PUSH    DPH                  ；保存DPH<br>               PUSH    DPL                 ；保存DPL<br>               MOV    DPTR，#TAB1<br>​                MOVC     A，@A+DPTR<br>​                POP     DPL                  ；恢复DPL<br>​                POP     DPH                  ；恢复DPH<br>​                RET<br>TAB1：   DB      00H，01H，04H，09H，10H；平方表<br>               DB      19H，24H，31H，40H，51H</p>
+</blockquote>
+<blockquote>
+<p><strong>有一巡回检测报警装置，需对16路（x）输入进行检测，每路有一个最大允许值（y），为双字节数。需根据测量的路数（x），查表找出对应该路的最大允许值（y），看输入值是否大于最大允许值，如果大于就报警。</strong><br><strong>取路数为x（0≤x≤15），y为最大允许值，放在表格中。设进入查表程序前，假设路数x已放于R2中，查表后该路的最大允许值y放于R3R4中。查表的查表程序如下：</strong></p>
+<p> TB3：     MOV   A，R2<br>                ADD    A，R2           ；(R2)*2→(A)<br>                MOV   R3，A           ；保存指针<br>                ADD    A，#6            ；加偏移量<br>                MOVC  A，@A+PC      ；查第一字节<br>                XCH       A，R3<br>               ADD       A，#3<br>               MOVC  A，@A+PC      ；查第二字节<br>               MOV    R4，A<br>               RET<br>TAB3：  DW        1520，3721，42645，7580 ；最大值表<br>              DW        3483，32657，883，9943<br>              DW        10000，40511，6758，8931<br>              DW        4468，5871，13284，27808</p>
+</blockquote>
+<p><strong>表格长度不能超过256B</strong>，且只能存放于“MOVC A，@A+PC”指令以下的256个单元中，如需把表格放在程序存储器空间的任何地方，应使用指令“MOVC A，@A+DPTR”。</p>
+<blockquote>
+<p>以AT89S51为核心的温度控制器，温度传感器输出的电压与温度为非线性关系，传感器输出电压已由A/D转换为10位二进制数。测得的不同温度下的电压值数据构成一个表，表中温度值为y（双字节无符号数），x（双字节无符号数）为电压值数据。设测得的电压值x放入R2R3中，根据电压值x，查找对应的温度值y（表），仍放入R2R3中。<br>   参考程序如下：</p>
+<p> LTB2：         MOV    DPTR，#TAB2<br>                    MOV    A，R3<br>                    CLR    C<br>                     RLC    A<br>                     MOV    R3，A<br>                     XCH    A，R2<br>                     RLC    A<br>                     XCH    R2，A<br>                     ADD    A，DPL  ；(R2R3)+(DPTR)→(DPTR)<br>                     MOV    DPL，A<br>                     MOV    A，DPH<br>                     ADDC  A，R2<br>                     MOV    DPH，A<br>                     CLR    A</p>
+<p>​                    MOVC    A，@A+DPTR ；查第一字节<br>​                    MOV    R2，A                ；第一字节存入R2中<br>​                    CLR    A<br>​                    INC    DPTR<br>​                    MOVC  A，@A+DPTR   ；查第二字节<br>​                    MOV    R3，A          ；第二字节存入R3中<br>​                    RET</p>
+<p>TAB2：      DW    …， … ，…      ；温度值表</p>
+</blockquote>
+<p>由于使用指令“MOVC A，@A+DPTR”，表TAB2可放入64KB程序存储器空间任何位置，表格长度可大于256B。</p>
+<h3 id="关键字查找程序设计"><a href="#关键字查找程序设计" class="headerlink" title="关键字查找程序设计"></a>关键字查找程序设计</h3><p>在表中查找关键字，也称数据检索。有两种方法，即顺序检索和对分检索。</p>
+<h4 id="顺序检索"><a href="#顺序检索" class="headerlink" title="顺序检索"></a>顺序检索</h4><p>要检索的表是无序的，检索时只能从第1项开始逐项查找，判所取数据是否与关键字相等。</p>
+<blockquote>
+<p><strong>从50个字节无序表中查找关键字“xxH”。</strong><br>ORG    1000H<br>MOV    30H，#xxH    ；关键字xxH送30H单元<br>MOV    R1，#50    ；查找次数送R1<br>MOV    A，#14        ；修正值送A<br>MOV   DPTR，#TAB4    ；表首地址送DPTR</p>
+<p>LOOP：    PUSH   Acc<br>                 MOVC  A，@ A+PC    ；查表结果送A<br>                 CJNE  A，40H，LOOP1；(40H)不等于关键字则转LOOP1<br>                 MOV   R2，DPH；已查到关键字，把该字地址送R2，R3<br>                MOV   R3，DPL<br>DONE：   RET<br>LOOP1：POP        Acc        ；修正值弹出<br>               INC        A        ；A+1→A<br>               INC        DPTR        ；修改数据指针DPTR<br>               DJNZ   R1，LOOP    ；R1≠0，未查完，继续查找<br>               MOV    R2，#00H    ；R1=0，R2和R3清“0”<br>               MOV    R3，#00H    ；表中50个数已查完<br>               AJMP    DONE        ；从子程序返回<br>TAB4：  DB     …，…，…    ；50个无序数据表</p>
+</blockquote>
+<h4 id="对分检索"><a href="#对分检索" class="headerlink" title="对分检索"></a>对分检索</h4><p>对分检索的前提是检索的数据表<strong>已经排好序</strong>，以便于按照对分原则取数。如何进行数据排序，稍后介绍。<br><strong>对分检索的方法：取数据表中间位置的数与关键字进行比较，如相等，则查找结束；</strong><br>如果<strong>取数大于关键字</strong>，则下次对分检索的范围是从数据区起点到本次取数处。<br>如果<strong>取数小于关键字</strong>，则下次对分检索的范围是从本次取数数据区起点到数据区终点。依此类推，逐渐缩小检索范围，减少次数，大大提高查找速度。</p>
+<h4 id="数据极值查找程序设计"><a href="#数据极值查找程序设计" class="headerlink" title="数据极值查找程序设计"></a>数据极值查找程序设计</h4><p>进行数值大小的比较，从一批数据中找出<strong>最大值（或最小值）</strong>并存于某一单元中。</p>
+<blockquote>
+<p><strong>片内RAM中存放一批数据，查找出最大值并存放于首地址中。设R0中存放首地址，R2中存放字节数，程序框图如图4-1所示。程序如下：</strong><br>                MOV      R2，n        ；n为要比较的数据字节数<br>                MOV       A，R0        ；存首地址指针<br>                MOV       R1，A<br>                DEC       R2<br>                MOV       A，@R1</p>
+<p>LOOP：  MOV      R3， A<br>                DEC       R1<br>                CLR       C<br>                SUBB  A，@R1    ；两个数比较<br>                JNC       LOOP1    ；C=0，A中的数大，跳LOOP1<br>                MOV   A，@R1        ；C=1，则大数送A<br>                SJMP   LOOP2<br>LOOP1：MOV       A，R3<br>LOOP2：DJNZ      R2， LOOP    ；是否比较结束？<br>                MOV       @R0， A    ；存最大数<br>               RET</p>
+</blockquote>
+<h4 id="数据排序程序设计"><a href="#数据排序程序设计" class="headerlink" title="数据排序程序设计"></a>数据排序程序设计</h4><p>将一批数由小到大（<strong>升序</strong>）排列，或由大到小（<strong>降序</strong>）排列。<br>最常用的数据排序算法是<strong>冒泡法</strong>，是相邻数互换的排序方法，因其过程类似水中气泡上浮，故称冒泡法。<br>排序时，<strong>从前向后进行相邻两个数的比较，如果数据的大小次序与要求的顺序不符时</strong>，就将<strong>两个数互换</strong>；否则，顺序符合要求就不互换。如果进行升序排序，应通过这种相邻数互换方法，使<strong>小数向前移，大数向后移</strong>。<br>如此从前向后进行一次次<strong>相邻数互换（冒泡）</strong>，就会把这批数据的最大数排到最后，次大数排在倒数第二的位置</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yan19.top/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" data-id="ckon0l2yg0000egx340si1i0t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "alex19"
+        },
+        "headline": "汇编语言程序设计",
+        "image": "http://yan19.top",
+        "keywords": "",
+        "genre": "",
+        "datePublished": "2021-05-13",
+        "dateCreated": "2021-05-13",
+        "dateModified": "2021-05-13",
+        "url": "http://yan19.top/2021/05/13/汇编语言程序设计/",
+        "description": "一、概述汇编语言语句和格式两种基本语句：指令语句和伪指令语句。
+
+指令语句 
+每一指令语句在汇编时都产生一个指令代码（机器代码），执行该指令代码对应着机器的一种操作。
+
+伪指令语句是控制汇编（翻译）过程的一些控制命令。在汇编时没有机器代码与之对应。
+
+
+汇编语言语句是符合典型的汇编语言的四分段格式：
+
+
+
+标号字段  (LABLE)
+操作码字段  (OPCODE)
+操作数字段  (OPRAND)
+",
+        "wordCount": 2327
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            单片机的串行口
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Markdown的一些语法说明</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="thumbnail">
+    
+    
+        <span style="background-image:url(C:\Users\姑洗十九\AppData\Roaming\Typora\typora-user-images\image-20210513170302439.png)" alt="单片机的串行口" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="title">单片机的串行口</a></p>
+                            <p class="item-date"><time datetime="2021-05-13T14:55:29.000Z" itemprop="datePublished">2021-05-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="title">汇编语言程序设计</a></p>
+                            <p class="item-date"><time datetime="2021-05-13T14:53:33.000Z" itemprop="datePublished">2021-05-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" class="title">Markdown的一些语法说明</a></p>
+                            <p class="item-date"><time datetime="2021-04-21T11:08:05.000Z" itemprop="datePublished">2021-04-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/20/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/04/20/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2021-04-20T11:58:05.762Z" itemprop="datePublished">2021-04-20</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 alex19</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yan19.top/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
