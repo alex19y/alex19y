@@ -12,19 +12,19 @@
     
     <meta name="keywords" content="" />
     
-    <meta name="description" content="一、串行口的结构  有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。  发送缓冲器只能写入不能读出  接收缓冲器只能读出不能写入  两个缓冲器共用一个特殊功能寄存器字节地址（99H）。  控制寄存器共有两个：特殊功能寄存器SCON和PCON。 串行口控制寄存器SCON字节地址98H，可位寻址，位地址为98H～9FH。   SM0、SM1——串行口4种工作方式">
+    <meta name="description" content="一、串行口的结构 串行口的内部结构图  - 有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。  - 发送缓冲器只能写入不能读出  - 接收缓冲器只能读出不能写入  - 两个缓冲器共用一个特殊功能寄存器字节地址（99H）。  - 控制寄存器共有两个：特殊功能寄存器SCON和PCON。    ## 串行口控制寄存器SCON    字节地址98H，**可位寻址**">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单片机的串行口">
 <meta property="og:url" content="http://yan19.top/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/index.html">
 <meta property="og:site_name" content="十九">
-<meta property="og:description" content="一、串行口的结构  有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。  发送缓冲器只能写入不能读出  接收缓冲器只能读出不能写入  两个缓冲器共用一个特殊功能寄存器字节地址（99H）。  控制寄存器共有两个：特殊功能寄存器SCON和PCON。 串行口控制寄存器SCON字节地址98H，可位寻址，位地址为98H～9FH。   SM0、SM1——串行口4种工作方式">
+<meta property="og:description" content="一、串行口的结构 串行口的内部结构图  - 有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。  - 发送缓冲器只能写入不能读出  - 接收缓冲器只能读出不能写入  - 两个缓冲器共用一个特殊功能寄存器字节地址（99H）。  - 控制寄存器共有两个：特殊功能寄存器SCON和PCON。    ## 串行口控制寄存器SCON    字节地址98H，**可位寻址**">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:/blog/yan19/source/image/image-20210513170302439.png">
+<meta property="og:image" content="http://yan19.top/image/串行口的内部结构图.png">
 <meta property="article:published_time" content="2021-05-13T14:55:29.000Z">
-<meta property="article:modified_time" content="2021-05-19T13:11:52.090Z">
+<meta property="article:modified_time" content="2021-05-19T13:35:00.201Z">
 <meta property="article:author" content="alex19">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/blog/yan19/source/image/image-20210513170302439.png">
+<meta name="twitter:image" content="http://yan19.top/image/串行口的内部结构图.png">
     
 
     
@@ -183,7 +183,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="article-date">
-     <time datetime="2021-05-19T13:11:52.090Z" itemprop="dateModified">2021-05-19</time>
+     <time datetime="2021-05-19T13:35:00.201Z" itemprop="dateModified">2021-05-19</time>
   </a>
 </div>
 
@@ -205,84 +205,104 @@
 
             
 
-            <h1 id="一、串行口的结构"><a href="#一、串行口的结构" class="headerlink" title="一、串行口的结构"></a>一、串行口的结构</h1><p><img src="C:\blog\yan19\source\image\image-20210513170302439.png" alt="image-20210513170302439"></p>
-<ul>
-<li><p>有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。</p>
-</li>
-<li><p>发送缓冲器只能写入不能读出</p>
-</li>
-<li><p>接收缓冲器只能读出不能写入</p>
-</li>
-<li><p>两个缓冲器共用一个特殊功能寄存器字节地址（99H）。</p>
-</li>
-<li><p>控制寄存器共有两个：特殊功能寄存器SCON和PCON。</p>
-<h2 id="串行口控制寄存器SCON"><a href="#串行口控制寄存器SCON" class="headerlink" title="串行口控制寄存器SCON"></a>串行口控制寄存器SCON</h2><p>字节地址98H，<strong>可位寻址</strong>，位地址为98H～9FH。</p>
-<p><img src="C:\blog\yan19\source\image\image-20210513170451012.png" alt="image-20210513170451012"></p>
-<ol>
-<li><p><strong>SM0、SM1</strong>——串行口4种工作方式选择位</p>
-<p><img src="C:\blog\yan19\source\image\image-20210513170528526.png" alt="image-20210513170528526"></p>
-</li>
-<li><p><strong>SM2</strong>——多机通信控制位</p>
-<blockquote>
-<p>多机通信是在方式2和方式3下进行。当串口以方式2或方式3接收时，如果SM2 = 1，则只有当接收到的第9位数据（RB8）为“1”时，才使RI置“1”，产生中断请求，并将接收到的前8位数据送入SBUF。<br>当接收到的第9位数据（RB8）为“0”时，则将接收到的前8位数据丢弃。</p>
-<p>当SM2 = 0时，则不论第9位数据是1还是0，都将前8位数据送入SBUF中，并使RI置1，产生中断请求。<br>在方式1时，如果SM2 = 1，则只有收到有效的停止位时才会激活RI。<br>在方式0时，SM2必须为0。</p>
-</blockquote>
-</li>
-<li><p><strong>REN</strong>——允许串行接收位。</p>
-<blockquote>
-<p>由软件置“1”或清“0”。</p>
-<p><strong>REN=1</strong>，允许串行口接收数据。</p>
-<p><strong>REN=0</strong>，禁止串行口接收数据。</p>
-</blockquote>
-</li>
-<li><p><strong>TB8</strong>——发送的第9位数据</p>
-<blockquote>
-<p>方式2和方式3，TB8是要发送的第9位数据，其值由软件置“1”或清“0”。在<strong>双机串行通信</strong>时，一般作为<strong>奇偶校验位</strong>使用；在<strong>多机串行通信</strong>中用来表示主机发送的是地址帧还是数据帧，TB8=1为<strong>地址帧</strong>，TB8=0为<strong>数据帧</strong>。</p>
-</blockquote>
-</li>
-<li><p><strong>RB8</strong>——接收的第9位数据</p>
-<blockquote>
-<p>方式2和方式3，RB8存放接收到的第9位数据。在方式1，如SM2 = 0，RB8是接收到的停止位。在方式0，不使用RB8。</p>
-</blockquote>
-</li>
-<li><p><strong>TI</strong>——发送中断标志位</p>
-<blockquote>
-<p>方式0，串行发送的第8位数据结束时TI由硬件置“1”，在其他方式中，串行口发送停止位的开始时置TI 为“1”。</p>
-<p>TI =1，表示一帧数据发送结束。TI的状态可供软件查询，也可申请中断。CPU响应中断后，在中断服务程序中向SBUF写入要发送的下一帧数据。TI必须由软件清“0”。</p>
-</blockquote>
-</li>
-<li><p><strong>RI</strong>——接收中断标志位</p>
-<blockquote>
-<p>方式0时，接收完第8位数据时，RI由硬件置“1”。在其他工作方式中，串行接收到停止位时，该位置“1”。RI = 1，表示一帧数据接收完毕，并申请中断，要求CPU从接收SBUF取走数据。该位的状态也可供软件查询。RI必须由软件清“0”。</p>
-</blockquote>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="特殊功能寄存器PCON"><a href="#特殊功能寄存器PCON" class="headerlink" title="特殊功能寄存器PCON"></a>特殊功能寄存器PCON</h2><blockquote>
-<p>字节地址为87H，不能位寻址。</p>
-</blockquote>
-<p><img src="C:\blog\yan19\source\image\image-20210513171424127.png" alt="image-20210513171424127"></p>
-<blockquote>
-<p>仅最高位SMOD与串口有关，其他各位的功能已在第2章的节电工作方式一节中作过介绍。</p>
-</blockquote>
-<p>SMOD：波特率选择位。<br>例如，方式1的波特率计算公式为</p>
-<blockquote>
-<p> 方式1波特率 =  <script type="math/tex">\frac{2^{SMOD}}{32}*(定时器T1的溢出率)</script></p>
-</blockquote>
-<p>当SMOD = 1时，要比SMOD = 0时的波特率加倍，所以也称SMOD位为波特率倍增位。</p>
-<h1 id="二、-串行口的四种工作方式"><a href="#二、-串行口的四种工作方式" class="headerlink" title="二、 串行口的四种工作方式"></a>二、 串行口的四种工作方式</h1><h2 id="方式0"><a href="#方式0" class="headerlink" title="方式0"></a>方式0</h2><p><strong>方式0</strong>为同步移位寄存器输入/输出方式。该方式并不用于两个AT89S51单片机之间的异步串行通信，而是用于串行口外接移位寄存器，扩展并行I/O口。<br>8位数据为一帧，无起始位和停止位，先发送或接收最低位。波特率固定，为<script type="math/tex">\frac{f_{osc}}{12}</script>。</p>
-<p><img src="C:\blog\yan19\source\image\image-20210513172734492.png" alt="image-20210513172734492"></p>
-<h3 id="方式0发送"><a href="#方式0发送" class="headerlink" title="方式0发送"></a>方式0发送</h3><p>当CPU执行一条将数据写入发送缓冲器SBUF的指令时，产生一个<strong>正脉冲</strong>，串行口开始把SBUF中的8位数据以<script type="math/tex">\frac{f_{osc}}{12}</script>的固定波特率从RXD引脚串行输出，低位在先，TXD引脚输出同步移位脉冲，发送完8位数据，中断标志位TI置“1”。 </p>
-<p><img src="C:\blog\yan19\source\image\image-20210513173044714.png" alt="image-20210513173044714"></p>
+            <h1 id="一、串行口的结构"><a href="#一、串行口的结构" class="headerlink" title="一、串行口的结构"></a>一、串行口的结构</h1><p><img src="/image/串行口的内部结构图.png" alt="串行口的内部结构图"></p>
+<center>串行口的内部结构图
+
+- 有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。
+
+- 发送缓冲器只能写入不能读出
+
+- 接收缓冲器只能读出不能写入
+
+- 两个缓冲器共用一个特殊功能寄存器字节地址（99H）。
+
+- 控制寄存器共有两个：特殊功能寄存器SCON和PCON。
+
+  ## 串行口控制寄存器SCON
+
+  字节地址98H，**可位寻址**，位地址为98H～9FH。
+
+  ![串行口控制寄存器SCON的格式](C:\blog\yan19\source\image\串行口控制寄存器SCON的格式.png)
+
+  <center>串行口控制寄存器SCON的格式
+
+  1. **SM0、SM1**——串行口4种工作方式选择位
+
+     ![image-20210513170528526](C:\blog\yan19\source\image\image-20210513170528526.png)
+
+  2. **SM2**——多机通信控制位
+
+     > 多机通信是在方式2和方式3下进行。当串口以方式2或方式3接收时，如果SM2 = 1，则只有当接收到的第9位数据（RB8）为“1”时，才使RI置“1”，产生中断请求，并将接收到的前8位数据送入SBUF。
+     > 当接收到的第9位数据（RB8）为“0”时，则将接收到的前8位数据丢弃。
+     >
+     > 当SM2 = 0时，则不论第9位数据是1还是0，都将前8位数据送入SBUF中，并使RI置1，产生中断请求。
+     > 在方式1时，如果SM2 = 1，则只有收到有效的停止位时才会激活RI。
+     > 在方式0时，SM2必须为0。
+
+  3. **REN**——允许串行接收位。
+
+     > 由软件置“1”或清“0”。
+     >
+     > **REN=1**，允许串行口接收数据。
+     >
+     > **REN=0**，禁止串行口接收数据。
+
+  4. **TB8**——发送的第9位数据
+
+     >方式2和方式3，TB8是要发送的第9位数据，其值由软件置“1”或清“0”。在**双机串行通信**时，一般作为**奇偶校验位**使用；在**多机串行通信**中用来表示主机发送的是地址帧还是数据帧，TB8=1为**地址帧**，TB8=0为**数据帧**。
+
+  5. **RB8**——接收的第9位数据
+
+     > 方式2和方式3，RB8存放接收到的第9位数据。在方式1，如SM2 = 0，RB8是接收到的停止位。在方式0，不使用RB8。
+
+  6. **TI**——发送中断标志位
+
+     > 方式0，串行发送的第8位数据结束时TI由硬件置“1”，在其他方式中，串行口发送停止位的开始时置TI 为“1”。
+     >
+     > TI =1，表示一帧数据发送结束。TI的状态可供软件查询，也可申请中断。CPU响应中断后，在中断服务程序中向SBUF写入要发送的下一帧数据。TI必须由软件清“0”。
+
+  7. **RI**——接收中断标志位
+
+     > 方式0时，接收完第8位数据时，RI由硬件置“1”。在其他工作方式中，串行接收到停止位时，该位置“1”。RI = 1，表示一帧数据接收完毕，并申请中断，要求CPU从接收SBUF取走数据。该位的状态也可供软件查询。RI必须由软件清“0”。
+
+## 特殊功能寄存器PCON
+
+> 字节地址为87H，不能位寻址。
+
+![image-20210513171424127](C:\blog\yan19\source\image\image-20210513171424127.png)
+
+> 仅最高位SMOD与串口有关，其他各位的功能已在第2章的节电工作方式一节中作过介绍。
+
+SMOD：波特率选择位。
+例如，方式1的波特率计算公式为
+
+>  方式1波特率 =  $$ \frac{2^{SMOD}}{32}*(定时器T1的溢出率) $$
+
+当SMOD = 1时，要比SMOD = 0时的波特率加倍，所以也称SMOD位为波特率倍增位。
+
+# 二、 串行口的四种工作方式
+
+## 方式0
+
+**方式0**为同步移位寄存器输入/输出方式。该方式并不用于两个AT89S51单片机之间的异步串行通信，而是用于串行口外接移位寄存器，扩展并行I/O口。
+8位数据为一帧，无起始位和停止位，先发送或接收最低位。波特率固定，为$$\frac{f_{osc}}{12}$$。
+
+![image-20210513172734492](C:\blog\yan19\source\image\image-20210513172734492.png)
+
+### 方式0发送
+
+当CPU执行一条将数据写入发送缓冲器SBUF的指令时，产生一个**正脉冲**，串行口开始把SBUF中的8位数据以$$\frac{f_{osc}}{12}$$的固定波特率从RXD引脚串行输出，低位在先，TXD引脚输出同步移位脉冲，发送完8位数据，中断标志位TI置“1”。 
+
+![image-20210513173044714](C:\blog\yan19\source\image\image-20210513173044714.png )
+
 <center>方式0发送时序</center>
 
 <h3 id="方式0发送具体应用"><a href="#方式0发送具体应用" class="headerlink" title="方式0发送具体应用"></a>方式0发送具体应用</h3><p>如图所示为方式0发送的一个具体应用，通过串行口外接8位串行输入并行输出移位寄存器74LS164，扩展两个8位并行输出口的具体电路。<br>方式0发送时，串行数据由P3.0（RXD端）送出，移位脉冲由P3.1（TXD端）送出。<br>在移位脉冲的作用下，串行口发送缓冲器的数据逐位地从P3.0串行移入74LS164中。</p>
-<p><img src="C:\blog\yan19\source\image\image-20210513185249489.png" alt="image-20210513185249489"></p>
+<p><img src="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/blog\yan19\source\image\image-20210513185249489.png" alt="image-20210513185249489"></p>
 <center>外接串入并出移位寄存器74LS164扩展的并行输出口</center>
 
 <h3 id="方式0接收"><a href="#方式0接收" class="headerlink" title="方式0接收"></a>方式0接收</h3><h4 id="接收过程"><a href="#接收过程" class="headerlink" title="接收过程"></a>接收过程</h4><p>​    方式0接收，<strong>REN</strong>为串行口允许接收控制位，<strong>REN</strong>=0，禁止接收；<strong>REN</strong> = 1，允许接收。<br>​    当向SCON寄存器写入控制字（设置为方式0，并使REN位置1，同时RI = 0）时，产生一个正脉冲，串行口开始接收数据。<br>​    引脚RXD为数据输入端，TXD为移位脉冲信号输出端，接收器以<script type="math/tex">\frac{f_{osc}}{12}</script>的固定波特率采样RXD引脚的数据信息，当接收完8位数据时，中断标志RI置1，表示一帧数据接收完毕，可进行下一帧数据的接收，时序如图所示。</p>
-<p><img src="C:\blog\yan19\source\image\image-20210513185646457.png" alt="image-20210513185646457"></p>
+<p><img src="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/blog\yan19\source\image\image-20210513185646457.png" alt="image-20210513185646457"></p>
 <center>方式0接收时序
 
 
@@ -327,32 +347,32 @@
 <pre><code>$$&#123;方式1波特率&#125; = \frac&#123;2^&#123;SMOD&#125;&#125;&#123;32&#125;*定时器T1的溢出率$$
 </code></pre><p>式中，<strong>SMOD</strong>为<strong>PCON</strong>寄存器的最高位的值（0或1）。</p>
 <h3 id="方式1发送"><a href="#方式1发送" class="headerlink" title="方式1发送"></a>方式1发送</h3><p>​    方式1输出时，数据位由<strong>TXD</strong>端输出，发送一帧信息为10位：1位起始位0，8位数据位（先低位）和1位停止位1。当CPU执行一条数据写SBUF的指令，就启动发送。发送时序如图，图中TX时钟的频率就是发送的波特率。<br>​    发送开始时，内部发送控制信号 变为有效，将起始位向TXD脚（P3.1）输出，此后每经过一个TX时钟周期，便产生一个移位脉冲，并由TXD引脚输出一个数据位。8位数据位全部发送完毕后，中断标志位<strong>TI</strong>置1。</p>
-<p><img src="C:\blog\yan19\source\image\image-20210513191200642.png" alt="image-20210513191200642"></p>
-<p><center>方式1发送时序</p>
+<p><img src="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/blog\yan19\source\image\image-20210513191200642.png" alt="image-20210513191200642"></p>
+<p><center>方式1发送时序</center></p>
 <h3 id="方式1-接收"><a href="#方式1-接收" class="headerlink" title="方式1 接收"></a>方式1 接收</h3><p>​    方式1接收时（<strong>REN</strong> = 1），数据从<strong>RXD</strong>（P3.0）引脚输入。当检测到起始位的负跳变，则开始接收。接收时序见图。<br>​    接收时，定时控制信号有两种，一种是接收移位时钟（RX时钟），它的频率和传送的波特率相同，另一种是位检测器采样脉冲，频率是RX时钟的16倍。以波特率的16倍速率采样<strong>RXD</strong>脚状态。<strong>当采样到RXD端从1到0的负跳变时就启动检测器，接收的值是3次连续采样（第7、8、9个脉冲时采样）取两次相同的值，以确认起始位（负跳变）的开始，较好地消除干扰引起的影响。</strong></p>
-<p><img src="C:\blog\yan19\source\image\image-20210513191302721.png" alt="image-20210513191302721"></p>
-<p><center>方式1接收时序</p>
+<p><img src="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/blog\yan19\source\image\image-20210513191302721.png" alt="image-20210513191302721"></p>
+<p><center>方式1接收时序</center></p>
 <p>当确认起始位有效时，开始接收一帧信息。每一位数据，也都进行<strong>3次连续采样</strong>（第7、8、9个脉冲采样），接收的值是3次采样中至少两次相同的值。当一帧数据接收完毕后，同时满足以下两个条件，接收才有效。<br>（1） <strong>RI</strong> = 0，即上一帧数据接收完成时，RI = 1发出的中断请求已被响应，SBUF中的数据已被取走，说明“接收SBUF”已空。</p>
 <p>（2）<strong>SM2</strong> = 0或收到的停止位 = 1（方式1时，停止位已进入RB8），则将接收到的数据装入SBUF和RB8（装入的是停止位），且中断标志RI置“1”。<br>若不同时满足两个条件，收的数据不能装入SBUF，该帧数据将丢弃。</p>
 <h2 id="方式2"><a href="#方式2" class="headerlink" title="方式2"></a>方式2</h2><p>方式2和方式3，为9位异步通信接口。每帧数据为11位，1位起始位0，8位数据位（先低位），1位可程控为1或0的第9位数据和1位停止位。方式2、方式3帧格式如图所示。</p>
-<p><img src="C:\blog\yan19\source\image\image-20210513191616938.png" alt="image-20210513191616938"></p>
-<p><center>方式2、方式3的帧格式</p>
+<p><img src="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/blog\yan19\source\image\image-20210513191616938.png" alt="image-20210513191616938"></p>
+<p><center>方式2、方式3的帧格式</center></p>
 <p><strong><script type="math/tex">{方式2的波特率} = \frac{2^{SMOD}}{64}*f_{OSC}</script></strong></p>
 <h3 id="方式2发送"><a href="#方式2发送" class="headerlink" title="方式2发送"></a>方式2发送</h3><p>发送前，先根据通信协议由软件设置<strong>TB8</strong>（如奇偶校验位或多机通信的地址/数据标志位），然后将要发送的数据写入SBUF，即启动发送。TB8自动装入第9位数据位，逐一发送。发送完毕，使TI位置“1”。<br>发送时序如图所示。</p>
-<p><img src="C:\blog\yan19\source\image\image-20210513191912351.png" alt="image-20210513191912351"></p>
-<p><center>方式2和方式3发送时序</p>
+<p><img src="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/blog\yan19\source\image\image-20210513191912351.png" alt="image-20210513191912351"></p>
+<p><center>方式2和方式3发送时序</center></p>
 <h3 id="方式2接收"><a href="#方式2接收" class="headerlink" title="方式2接收"></a>方式2接收</h3><p><strong>SM0</strong>、<strong>SM1=10</strong>，且<strong>REN</strong> = 1时，以方式2接收数据。数据由RXD端输入，接收11位信息。当位检测逻辑采样到RXD的负跳变，判断起始位有效，便开始接收一帧信息。在接收完第9位数据后，需满足以下两个条件，才能将接收到的数据送入SBUF（接收缓冲器）。</p>
 <ol>
 <li>RI = 0，意味着接收缓冲器为空。</li>
 <li>SM2 = 0或接收到的第9位数据位RB8 = 1。</li>
 </ol>
 <p>当满足上述两个条件时，收到的数据送SBUF（接收缓冲器），第9位数据送入RB8，且RI置“1”。若不满足这两个条件，接收的信息将被丢弃。<br>串行口方式2和方式3接收时序如图所示。</p>
-<p><img src="C:\blog\yan19\source\image\image-20210513192210990.png" alt="image-20210513192210990"></p>
-<p><center>方式2和方式3接收时序</p>
+<p><img src="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/blog\yan19\source\image\image-20210513192210990.png" alt="image-20210513192210990"></p>
+<p><center>方式2和方式3接收时序</center></p>
 <h2 id="方式3"><a href="#方式3" class="headerlink" title="方式3"></a>方式3</h2><p>SM0、SM1=11时，方式3。为波特率可变的9位异步通信方式，除了波特率外，方式3和方式2相同。</p>
 <script type="math/tex; mode=display">{方式3波特率} =   \frac{2^{SMOD}}{32}*{定时器T1的溢出率}</script><h1 id="三、多机通信"><a href="#三、多机通信" class="headerlink" title="三、多机通信"></a>三、多机通信</h1><p>多个单片机可利用串行口进行多机通信，经常采用如图所示的<strong>主从式结构</strong>。系统中有1个主机（单片机或其他有串行接口的微机）和多个单片机组成的从机系统。主机的<strong>RXD</strong>与所有从机的<strong>TXD</strong>端相连，<strong>TXD</strong>与所有从机的<strong>RXD</strong>端相连。从机地址分别为01H、02H和03H。</p>
-<p><img src="C:\blog\yan19\source\image\image-20210513192515880.png" alt="image-20210513192515880"></p>
-<p><center>多机通信系统示意图</p>
+<p><img src="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/blog\yan19\source\image\image-20210513192515880.png" alt="image-20210513192515880"></p>
+<p><center>多机通信系统示意图</center></p>
 <p>​    主从式是指多机系统中，只有一个主机，其余全是从机。主机发送的信息可以被所有从机接收，任何一个从机发送的信息，只能由主机接收。从机和从机之间不能进行直接通信，只能经主机才能实现。<br>​    多机通信的工作原理：<br>​    要保证主机与所选择的从机通信，须保证串口有识别功能。<strong>SCON</strong>中的<strong>SM2</strong>位就是为满足这一条件设置的多机通信控制位。其工作原理是在串行口以方式2（或方式3）接收时，若SM2 = 1，则表示进行多机通信，可能以下<strong>两种情况</strong>：</p>
 <ol>
 <li>从机接收到的主机发来的<strong>第9位数据RB8=1</strong>时，前8位数据才装入SBUF，并置中断标志RI = 1，向CPU发出中断请求。<br>在中断服务程序中，从机把接收到的SBUF中的数据存入数据缓冲区中。</li>
@@ -372,7 +392,7 @@
 <p>这时要求与主机正在进行数据传输的从机必须随时注意，一旦接收的数据第9位（RB8）为“1”，说明主机传送的不再是数据，而是地址，这个地址就有可能是“广播地址”。<br>当收到“广播地址”后，便将从机的通信模式再设置成多机模式，为下一次的多机通信做好准备。</p>
 </li>
 </ol>
-
+</center></center></center></center>
         </div>
         <footer class="article-footer">
             
@@ -450,7 +470,7 @@
             "name": "alex19"
         },
         "headline": "单片机的串行口",
-        "image": "http://yan19.topC:\blog\yan19\source\image\image-20210513170302439.png",
+        "image": "http://yan19.top/image/串行口的内部结构图.png",
         "keywords": "",
         "genre": "",
         "datePublished": "2021-05-13",
@@ -458,21 +478,22 @@
         "dateModified": "2021-05-19",
         "url": "http://yan19.top/2021/05/13/单片机的串行口/",
         "description": "一、串行口的结构
+串行口的内部结构图
 
-有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。
+- 有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。
 
-发送缓冲器只能写入不能读出
+- 发送缓冲器只能写入不能读出
 
-接收缓冲器只能读出不能写入
+- 接收缓冲器只能读出不能写入
 
-两个缓冲器共用一个特殊功能寄存器字节地址（99H）。
+- 两个缓冲器共用一个特殊功能寄存器字节地址（99H）。
 
-控制寄存器共有两个：特殊功能寄存器SCON和PCON。
-串行口控制寄存器SCON字节地址98H，可位寻址，位地址为98H～9FH。
+- 控制寄存器共有两个：特殊功能寄存器SCON和PCON。
 
+  ## 串行口控制寄存器SCON
 
-SM0、SM1——串行口4种工作方式",
-        "wordCount": 272
+  字节地址98H，**可位寻址**",
+        "wordCount": 385
     }
 </script>
 
@@ -581,7 +602,7 @@ SM0、SM1——串行口4种工作方式",
                             <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="thumbnail">
     
     
-        <span style="background-image:url(C:\blog\yan19\source\image\image-20210513170302439.png)" alt="单片机的串行口" class="thumbnail-image"></span>
+        <span style="background-image:url(/image/串行口的内部结构图.png)" alt="单片机的串行口" class="thumbnail-image"></span>
     
     
 </a>
