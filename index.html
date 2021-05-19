@@ -170,7 +170,7 @@
         <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="thumbnail">
     
     
-        <span style="background-image:url(/image/串行口的内部结构图.png)" alt="单片机的串行口" class="thumbnail-image"></span>
+        <span style="background-image:url(/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png)" alt="单片机的串行口" class="thumbnail-image"></span>
     
     
         
@@ -201,21 +201,23 @@
 
         <p class="article-excerpt">
             一、串行口的结构
-串行口的内部结构图
 
-- 有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。
+有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。
 
-- 发送缓冲器只能写入不能读出
+发送缓冲器只能写入不能读出
 
-- 接收缓冲器只能读出不能写入
+接收缓冲器只能读出不能写入
 
-- 两个缓冲器共用一个特殊功能寄存器字节地址（99H）。
+两个缓冲器共用一个特殊功能寄存器字节地址（99H）。
 
-- 控制寄存器共有两个：特殊功能寄存器SCON和PCON。
+控制寄存器共有两个：特殊功能寄存器SCON和PCON。
 
-  ## 串行口控制寄存器SCON
 
-  字节地址98H，**可位寻址**
+串行口控制寄存器SCON字节地址98H，可位寻址，位地址为98H～9FH。
+
+串行口控制寄存器SCON的格式
+
+
         </p>
     </div>
 </article>
@@ -471,7 +473,7 @@ Quick
                             <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="thumbnail">
     
     
-        <span style="background-image:url(/image/串行口的内部结构图.png)" alt="单片机的串行口" class="thumbnail-image"></span>
+        <span style="background-image:url(/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png)" alt="单片机的串行口" class="thumbnail-image"></span>
     
     
 </a>
