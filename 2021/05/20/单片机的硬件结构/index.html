@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
+  
+  <title>单片机的硬件结构 - 十九</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
 
-    
-
-    
-    <title>单片机的硬件结构 | 十九</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="keywords" content="" />
-    
-    <meta name="description" content="硬件结构、引脚功能、存储器结构、特殊功能寄存器功能、4个并行I&#x2F;O口的结构和特点， 复位电路和时钟电路设计,节电工作模式。   一、 单片机的硬件组成  CPU（微处理器）8位，包括运算器和控制器两部分，还有位处理功能。 数据存储器（RAM）128B（52子系列为256B），最多可扩64KB。片内RAM为高速RAM，可加快速度和降低功耗。 程序存储器（Flash ROM）4KB Flash（A">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="硬件结构、引脚功能、存储器结构、特殊功能寄存器功能、4个并行I&#x2F;O口的结构和特点， 复位电路和时钟电路设计,节电工作模式。   一、 单片机的硬件组成  CPU（微处理器）8位，包括运算器和控制器两部分，还有位处理功能。 数据存储器（RAM）128B（52子系列为256B），最多可扩64KB。片内RAM为高速RAM，可加快速度和降低功耗。 程序存储器（Flash ROM）4KB Flash（A">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单片机的硬件结构">
 <meta property="og:url" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/index.html">
@@ -20,198 +20,151 @@
 <meta property="og:description" content="硬件结构、引脚功能、存储器结构、特殊功能寄存器功能、4个并行I&#x2F;O口的结构和特点， 复位电路和时钟电路设计,节电工作模式。   一、 单片机的硬件组成  CPU（微处理器）8位，包括运算器和控制器两部分，还有位处理功能。 数据存储器（RAM）128B（52子系列为256B），最多可扩64KB。片内RAM为高速RAM，可加快速度和降低功耗。 程序存储器（Flash ROM）4KB Flash（A">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519195525424.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519200004116.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519201252187.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519201640032.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519202337074.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/%5C%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84%5Cimage-20210519202356147.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520215746299.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/%5C%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84%5Cimage-20210520222012343.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222052377.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222101743.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222243992.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222350211.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520224555957.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520224826604.png">
+<meta property="og:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/%5C%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84%5Cimage-20210520225838757.png">
 <meta property="article:published_time" content="2021-05-20T15:00:53.000Z">
 <meta property="article:modified_time" content="2021-05-21T04:47:14.019Z">
 <meta property="article:author" content="alex19">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519195525424.png">
-    
-
-    
-        <link rel="alternate" href="/" title="十九" type="application/atom+xml" />
-    
-
-    
-
-    
-<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-    
-<link rel="stylesheet" href="/libs/titillium-web/styles.css">
-
-    
-<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-
-    
-<link rel="stylesheet" href="/css/style.css">
-
-
-    
-<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-
-    
-    
-    
-    
-
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+  <link rel="stylesheet" href="/css/style.css?v=1621573607317">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1621573607317">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1621573607317">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
-                                </li>
-                            
-                                    
-                                
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="alex19" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="alex19"></a>
+       </div>
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-
-<script src="/js/insight.js"></script>
-
-
-</div>
-                        </nav>
-                    </div>
-                </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="alex19">
+            <img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="alex19" alt="alex19">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>5</div>
+        <div><span>Tags</span>1</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
             </div>
-        </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
     </div>
-</header>
-
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
-    
-    uncategorized
-    </h1>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
 </div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=5CfKHun" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/20238211" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
 
-                        <div class="main-body-content">
-                            <article id="post-单片机的硬件结构" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+    </div>
     
-        <h1 class="article-title" itemprop="name">
-        单片机的硬件结构
-        </h1>
-    
-
-            </header>
-        
-        
-            <div class="article-meta">
-                
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" class="article-date">
-       <time datetime="2021-05-20T15:00:53.000Z" itemprop="datePublished">2021-05-20</time>
-    </a>
   </div>
 
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 alex19
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
 
-<div class="article-date">
-  <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" class="article-date">
-     <time datetime="2021-05-21T04:47:14.019Z" itemprop="dateModified">2021-05-21</time>
-  </a>
+  <article>
+    
+        <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+            <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="单片机的硬件结构" class="lazyload">
+            <h1>单片机的硬件结构</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年05月20日</a>
+    <a><i class="nexmoefont icon-areachart"></i>5k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 21 分钟</a>
 </div>
 
+    
 
-                
-
-                
-                
-
-                
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            
-
-            
-
-            
-
-            <blockquote>
+    <blockquote>
 <ul>
 <li>硬件结构、引脚功能、存储器结构、特殊功能寄存器功能、4个并行I/O口的结构和特点，</li>
 <li>复位电路和时钟电路设计,节电工作模式。</li>
 </ul>
 </blockquote>
-<h1 id="一、-单片机的硬件组成"><a href="#一、-单片机的硬件组成" class="headerlink" title="一、 单片机的硬件组成"></a>一、 单片机的硬件组成</h1><p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519195525424.png" alt="片内结构"></p>
+<h1 id="一、-单片机的硬件组成"><a href="#一、-单片机的硬件组成" class="headerlink" title="一、 单片机的硬件组成"></a>一、 单片机的硬件组成</h1><p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519195525424.png" alt="片内结构" class="lazyload"></p>
 <ol>
 <li><strong>CPU（微处理器）</strong><br>8位，包括运算器和控制器两部分，还有位处理功能。</li>
 <li><strong>数据存储器（RAM）</strong><br>128B（52子系列为256B），最多可扩64KB。片内RAM为高速RAM，可加快速度和降低功耗。</li>
@@ -343,11 +296,11 @@
 <li>片内和片外两部分，访问片内还是片外程序存储器，由EA*脚电平确定。<br>EA*=1，CPU从片内0000H开始取指令，当PC值没有超出0FFFH时，只访问片内Flash ，当PC值超出0FFFH自动转向读片外程序存储器1000H～FFFFH 内的程序。<br>EA*=0，不理会片内4KB Flash 存储器，只执行片外程序存储器（0000H～FFFFH）中的程序。</li>
 <li>程序存储器5个固定单元为各中断源中断入口。见表2-3。</li>
 </ol>
-<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520215746299.png" alt="表2-3"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520215746299.png" alt="表2-3" class="lazyload"></p>
 <h2 id="数据存储器空间"><a href="#数据存储器空间" class="headerlink" title="数据存储器空间"></a>数据存储器空间</h2><p>片内与片外两部分。</p>
 <ol>
 <li><p><strong>片内RAM</strong><br>片内数据存储器（RAM）共<strong>128个单元</strong>，字节地址为00H～7FH。结构见图2-4。</p>
-<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/%5C%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84%5Cimage-20210520222012343.png" alt="图2-4   片内RAM结构"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/%5C%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84%5Cimage-20210520222012343.png" alt="图2-4   片内RAM结构" class="lazyload"></p>
 <p><strong>00H～1FH</strong> 4组通用工作寄存器区，每区包含8B，为R7～R0。可用指令改变<strong>RS1、RS0</strong>两位来选择。<br><strong>20H～2FH</strong>的16个单元的128位可位寻址，也可字节寻址。</p>
 <p><strong>30H～7FH</strong>的单元只能字节寻址，用作存数据以及作为堆栈区。</p>
 </li>
@@ -355,7 +308,7 @@
 </li>
 </ol>
 <h2 id="特殊功能寄存器（SFR）"><a href="#特殊功能寄存器（SFR）" class="headerlink" title="特殊功能寄存器（SFR）"></a>特殊功能寄存器（SFR）</h2><p>映射在片内RAM的 <strong>80H～FFH</strong> 区域中，共26个。SFR的名称及分布见表2-4 。有些可位寻址。<br>与AT89C51相比，新增5个SFR：DP1L、DP1H、AUXR、AUXR1和WDTRST，已在表2-4中标出。<br><strong>凡是可位寻址的SFR，字节地址末位只能是0H或8H。</strong><br>若<strong>读/写未定义单元</strong>，将得到一个随机数。<br>下面介绍部分SFR。</p>
-<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222052377.png" alt="表2-4"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222052377.png" alt="表2-4" class="lazyload"></p>
 <p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222101743.png"></p>
 <ol>
 <li><p><strong>堆栈指针SP</strong></p>
@@ -375,7 +328,7 @@
 </code></pre>
 </li>
 </ol>
-<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222243992.png" alt="图2-5  AUXR寄存器的格式"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222243992.png" alt="图2-5  AUXR寄存器的格式" class="lazyload"></p>
 <p>其中:<br>    <strong>DISALE：ALE的禁止/允许位。</strong><br>        <strong>0</strong>：ALE有效，发出脉冲；<br>        <strong>1</strong>：ALE仅在执行MOVC和MOVX类指令时有效，不访问外部存储器时，ALE不输出脉冲信号；<br>    <strong>DISRTO：禁止/允许WDT溢出时的复位输出。</strong><br>        <strong>0</strong>：WDT溢出时，在RST引脚输出一个高电平脉冲；<br>        <strong>1</strong>：RST引脚仅为输入脚。<br>    <strong>WDIDLE：WDT在空闲模式下的禁止/允许位。</strong><br>         <strong>0</strong>： WDT在空闲模式<strong>继续计数</strong>；<br>         <strong>1</strong>： WDT在空闲模式<strong>暂停计数</strong>。</p>
 <ol start="4">
 <li><p><strong>数据指针DPTR0和DPTR1</strong><br>双数据指针寄存器，便于访问数据存储器。<br><strong>DPTR0</strong>：AT89C51<strong>原有</strong>的数据指针，<br><strong>DPTR1</strong>：新增加的数据指针。<br>寄存器AUXR1的DPS位用于选择两个数据指针。</p>
@@ -387,16 +340,16 @@
 <pre><code>       **0**：选择数据指针寄存器**DPTR0**；
        **1：**选择数据指针寄存器**DPTR1**。
 </code></pre>
-<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222350211.png" alt="图2-6  AUXR1寄存器的格式"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222350211.png" alt="图2-6  AUXR1寄存器的格式" class="lazyload"></p>
 </li>
 <li><p><strong>看门狗定时器WDT</strong><br>WDT包含一个<strong>14位计数器和看门狗复位寄存器（WDTRST）。</strong><br><strong>WDT提供一种</strong>使程序恢复正常运行的有效手段。<br>有关WDT在抗干扰设计中的应用以及低功耗模式下运行的状态，将在相应章节具体介绍。<br>上面介绍的特殊功能寄存器，除SP和B以外，其余均为AT89S51在AT89C51基础上新增加的SFR。</p>
 </li>
 </ol>
 <h2 id="位地址空间"><a href="#位地址空间" class="headerlink" title="位地址空间"></a>位地址空间</h2><p>211个寻址位的位地址，位地址范围为 <strong>00H～FFH</strong>，其中 <strong>00H～7FH</strong> 这128位处于片内RAM 字节地址 20H～2FH 单元中，如表2-5所示。其余的83个可寻址位分布在特殊功能寄存器SFR中，如表2-6。<br>可被位寻址的特殊寄存器有11个，共有位地址88个，5个位未用，其余83个位的位地址离散地分布于片内数据存储器区字节地址为80H～FFH的范围内，<strong>其最低位的位地址等于其字节地址，且其字节地址的末位都为0H或8H。</strong></p>
-<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520224555957.png" alt="表2-5"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520224555957.png" alt="表2-5" class="lazyload"></p>
 <h1 id="五、并行I-O端口"><a href="#五、并行I-O端口" class="headerlink" title="五、并行I/O端口"></a>五、并行I/O端口</h1><p>  <strong>4个8位</strong>并行I/O端口，为P0、P1、P2和P3。<br>  <strong>输出锁存器属特殊功能寄存器。</strong><br>  <strong>端口组成：每位均由输出锁存器、输出驱动器和输入缓冲器组成，</strong><br>   4个端口均可位寻址。</p>
 <h2 id="P0口"><a href="#P0口" class="headerlink" title="P0口"></a>P0口</h2><p><strong>双功能</strong>的8位并行端口，字节地址为<strong>80H</strong>，位地址为80H～87H。P0口某一位的位电路结构见图2-8。</p>
-<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520224826604.png" alt="图2-8  P0口位电路结构"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520224826604.png" alt="图2-8  P0口位电路结构" class="lazyload"></p>
 <ol>
 <li><p><strong>位电路结构</strong></p>
 <p>P0口位电路包括：</p>
@@ -427,462 +380,83 @@
 </ol>
 <p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/%5C%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84%5Cimage-20210520225838757.png"></p>
 <h2 id="P1口"><a href="#P1口" class="headerlink" title="P1口"></a>P1口</h2>
-        </div>
-        <footer class="article-footer">
-            
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>alex19<br>
+    <strong>Link：</strong><a href="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" title="http:&#x2F;&#x2F;yan19.top&#x2F;2021&#x2F;05&#x2F;20&#x2F;%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yan19.top&#x2F;2021&#x2F;05&#x2F;20&#x2F;%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
 
 
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
 
-    <a data-url="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" data-id="ckox0zlxd00006wx3gyvedhjc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
 </script>
-
-        </footer>
-    </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "alex19"
-        },
-        "headline": "单片机的硬件结构",
-        "image": "http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519195525424.png",
-        "keywords": "",
-        "genre": "",
-        "datePublished": "2021-05-20",
-        "dateCreated": "2021-05-20",
-        "dateModified": "2021-05-21",
-        "url": "http://yan19.top/2021/05/20/单片机的硬件结构/",
-        "description": "
-
-硬件结构、引脚功能、存储器结构、特殊功能寄存器功能、4个并行I/O口的结构和特点，
-复位电路和时钟电路设计,节电工作模式。
-
-
-一、 单片机的硬件组成
-
-CPU（微处理器）8位，包括运算器和控制器两部分，还有位处理功能。
-数据存储器（RAM）128B（52子系列为256B），最多可扩64KB。片内RAM为高速RAM，可加快速度和降低功耗。
-程序存储器（Flash ROM）4KB Flash（A",
-        "wordCount": 354
-    }
-</script>
-
-</article>
-
-    <section id="comments">
-    
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-
-    
-    </section>
-
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>follow:</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-twitter"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-facebook"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-stack-overflow"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-weibo"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-rss"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-    
-        <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">单片机的串行口</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
-    
-    <div class="widgets-container">
-        
-            
-                
-
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519195525424.png)" alt="单片机的硬件结构" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" class="title">单片机的硬件结构</a></p>
-                            <p class="item-date"><time datetime="2021-05-20T15:00:53.000Z" itemprop="datePublished">2021-05-20</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png)" alt="单片机的串行口" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="title">单片机的串行口</a></p>
-                            <p class="item-date"><time datetime="2021-05-13T14:55:29.000Z" itemprop="datePublished">2021-05-13</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="title">汇编语言程序设计</a></p>
-                            <p class="item-date"><time datetime="2021-05-13T14:53:33.000Z" itemprop="datePublished">2021-05-13</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" class="title">Markdown的一些语法说明</a></p>
-                            <p class="item-date"><time datetime="2021-04-21T11:08:05.000Z" itemprop="datePublished">2021-04-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/04/20/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/04/20/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2021-04-20T11:58:05.762Z" itemprop="datePublished">2021-04-20</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-            
-                
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">tags</h3>
-        <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">tag cloud</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
-        
-    </div>
-</aside>
-
-                </div>
-            </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2021 alex19</p>
-                
-                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
-                
-            </div>
-            <div class="footer-plugins">
+</section>
+  </div>
+</div>
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool"> 
               
-    
-
-
+                
+              
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
             </div>
+          </div>
         </div>
     </div>
-</footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
 
-    </div>
-    
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    var disqus_url = 'http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
+<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ 
 
+<script src="/js/app.js?v=1621573607322"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
 
-    
-        
-<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-share.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-video.min.js"></script>
-
-    
-    
-        
-<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-
-    
-    
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-        </script>
-        
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
-
-    
-
-    
-    
-    
+  
 
 
 
-<!-- Custom Scripts -->
-
-<script src="/js/main.js"></script>
 
 
 <script type="text/x-mathjax-config">
@@ -901,4 +475,5 @@ CPU（微处理器）8位，包括运算器和控制器两部分，还有位处�
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
+
 </html>

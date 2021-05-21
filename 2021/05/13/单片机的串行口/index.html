@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
+  
+  <title>单片机的串行口 - 十九</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
 
-    
-
-    
-    <title>单片机的串行口 | 十九</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="keywords" content="" />
-    
-    <meta name="description" content="一、串行口的结构  有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。  发送缓冲器只能写入不能读出  接收缓冲器只能读出不能写入  两个缓冲器共用一个特殊功能寄存器字节地址（99H）。  控制寄存器共有两个：特殊功能寄存器SCON和PCON。   串行口控制寄存器SCON字节地址98H，可位寻址，位地址为98H～9FH。   SM0、SM1——串行口4种工作">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="一、串行口的结构  有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。  发送缓冲器只能写入不能读出  接收缓冲器只能读出不能写入  两个缓冲器共用一个特殊功能寄存器字节地址（99H）。  控制寄存器共有两个：特殊功能寄存器SCON和PCON。   串行口控制寄存器SCON字节地址98H，可位寻址，位地址为98H～9FH。   SM0、SM1——串行口4种工作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单片机的串行口">
 <meta property="og:url" content="http://yan19.top/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/index.html">
@@ -20,192 +20,146 @@
 <meta property="og:description" content="一、串行口的结构  有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。  发送缓冲器只能写入不能读出  接收缓冲器只能读出不能写入  两个缓冲器共用一个特殊功能寄存器字节地址（99H）。  控制寄存器共有两个：特殊功能寄存器SCON和PCON。   串行口控制寄存器SCON字节地址98H，可位寻址，位地址为98H～9FH。   SM0、SM1——串行口4种工作">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yan19.top/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png">
+<meta property="og:image" content="http://yan19.top/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8SCON%E7%9A%84%E6%A0%BC%E5%BC%8F.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513170528526.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513171424127.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513172734492.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513173044714.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513185249489.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513185646457.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513190135104.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513190806623.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513191200642.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513191302721.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513191616938.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513191912351.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513192210990.png">
+<meta property="og:image" content="http://yan19.top/image/image-20210513192515880.png">
 <meta property="article:published_time" content="2021-05-13T14:55:29.000Z">
 <meta property="article:modified_time" content="2021-05-19T14:28:40.039Z">
 <meta property="article:author" content="alex19">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yan19.top/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png">
-    
-
-    
-        <link rel="alternate" href="/" title="十九" type="application/atom+xml" />
-    
-
-    
-
-    
-<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-    
-<link rel="stylesheet" href="/libs/titillium-web/styles.css">
-
-    
-<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-
-    
-<link rel="stylesheet" href="/css/style.css">
-
-
-    
-<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-
-    
-    
-    
-    
-
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+  <link rel="stylesheet" href="/css/style.css?v=1621573607326">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1621573607327">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1621573607327">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
-                                </li>
-                            
-                                    
-                                
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="alex19" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="alex19"></a>
+       </div>
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-
-<script src="/js/insight.js"></script>
-
-
-</div>
-                        </nav>
-                    </div>
-                </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="alex19">
+            <img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="alex19" alt="alex19">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>5</div>
+        <div><span>Tags</span>1</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
             </div>
-        </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
     </div>
-</header>
-
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
-    
-    uncategorized
-    </h1>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
 </div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=5CfKHun" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/20238211" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
 
-                        <div class="main-body-content">
-                            <article id="post-单片机的串行口" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+    </div>
     
-        <h1 class="article-title" itemprop="name">
-        单片机的串行口
-        </h1>
-    
-
-            </header>
-        
-        
-            <div class="article-meta">
-                
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="article-date">
-       <time datetime="2021-05-13T14:55:29.000Z" itemprop="datePublished">2021-05-13</time>
-    </a>
   </div>
 
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 alex19
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
 
-<div class="article-date">
-  <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="article-date">
-     <time datetime="2021-05-19T14:28:40.039Z" itemprop="dateModified">2021-05-19</time>
-  </a>
+  <article>
+    
+        <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+            <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="单片机的串行口" class="lazyload">
+            <h1>单片机的串行口</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年05月13日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3.9k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 16 分钟</a>
 </div>
 
+    
 
-                
-
-                
-                
-
-                
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            
-
-            
-
-            
-
-            <h1 id="一、串行口的结构"><a href="#一、串行口的结构" class="headerlink" title="一、串行口的结构"></a>一、串行口的结构</h1><p><img src="/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="串行口的内部结构图"></p>
+    <h1 id="一、串行口的结构"><a href="#一、串行口的结构" class="headerlink" title="一、串行口的结构"></a>一、串行口的结构</h1><p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="串行口的内部结构图" class="lazyload"></p>
 <ul>
 <li><p>有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。</p>
 </li>
@@ -219,10 +173,10 @@
 </li>
 </ul>
 <h2 id="串行口控制寄存器SCON"><a href="#串行口控制寄存器SCON" class="headerlink" title="串行口控制寄存器SCON"></a>串行口控制寄存器SCON</h2><p>字节地址98H，<strong>可位寻址</strong>，位地址为98H～9FH。</p>
-<p><img src="/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8SCON%E7%9A%84%E6%A0%BC%E5%BC%8F.png" alt="串行口控制寄存器SCON的格式"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8SCON%E7%9A%84%E6%A0%BC%E5%BC%8F.png" alt="串行口控制寄存器SCON的格式" class="lazyload"></p>
 <ol>
 <li><p><strong>SM0、SM1</strong>——串行口4种工作方式选择位</p>
-<p><img src="/image/image-20210513170528526.png" alt="串行口的4种工作方式"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513170528526.png" alt="串行口的4种工作方式" class="lazyload"></p>
 </li>
 <li><p><strong>SM2</strong>——多机通信控制位</p>
 <blockquote>
@@ -262,7 +216,7 @@
 <h2 id="特殊功能寄存器PCON"><a href="#特殊功能寄存器PCON" class="headerlink" title="特殊功能寄存器PCON"></a>特殊功能寄存器PCON</h2><blockquote>
 <p>字节地址为87H，不能位寻址。</p>
 </blockquote>
-<p><img src="/image/image-20210513171424127.png" alt="特殊功能寄存器PCON的格式"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513171424127.png" alt="特殊功能寄存器PCON的格式" class="lazyload"></p>
 <blockquote>
 <p>仅最高位SMOD与串口有关，其他各位的功能已在第2章的节电工作方式一节中作过介绍。</p>
 </blockquote>
@@ -272,17 +226,17 @@
 </blockquote>
 <p>当SMOD = 1时，要比SMOD = 0时的波特率加倍，所以也称SMOD位为波特率倍增位。</p>
 <h1 id="二、-串行口的四种工作方式"><a href="#二、-串行口的四种工作方式" class="headerlink" title="二、 串行口的四种工作方式"></a>二、 串行口的四种工作方式</h1><h2 id="方式0"><a href="#方式0" class="headerlink" title="方式0"></a>方式0</h2><p><strong>方式0</strong>为同步移位寄存器输入/输出方式。该方式并不用于两个AT89S51单片机之间的异步串行通信，而是用于串行口外接移位寄存器，扩展并行I/O口。<br>8位数据为一帧，无起始位和停止位，先发送或接收最低位。波特率固定，为$$\frac{f_{osc}}{12}$$。</p>
-<p><img src="/image/image-20210513172734492.png" alt="方式0的帧格式"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513172734492.png" alt="方式0的帧格式" class="lazyload"></p>
 <h3 id="方式0发送"><a href="#方式0发送" class="headerlink" title="方式0发送"></a>方式0发送</h3><p>当CPU执行一条将数据写入发送缓冲器SBUF的指令时，产生一个<strong>正脉冲</strong>，串行口开始把SBUF中的8位数据以$$\frac{f_{osc}}{12}$$的固定波特率从RXD引脚串行输出，低位在先，TXD引脚输出同步移位脉冲，发送完8位数据，中断标志位TI置“1”。 </p>
-<p><img src="/image/image-20210513173044714.png" alt="方式0发送时序"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513173044714.png" alt="方式0发送时序" class="lazyload"></p>
 <center>方式0发送时序</center>
 
 <h3 id="方式0发送具体应用"><a href="#方式0发送具体应用" class="headerlink" title="方式0发送具体应用"></a>方式0发送具体应用</h3><p>如图所示为方式0发送的一个具体应用，通过串行口外接8位串行输入并行输出移位寄存器74LS164，扩展两个8位并行输出口的具体电路。<br>方式0发送时，串行数据由P3.0（RXD端）送出，移位脉冲由P3.1（TXD端）送出。<br>在移位脉冲的作用下，串行口发送缓冲器的数据逐位地从P3.0串行移入74LS164中。</p>
-<p><img src="/image/image-20210513185249489.png" alt="外接串入并出移位寄存器74LS164扩展的并行输出口"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513185249489.png" alt="外接串入并出移位寄存器74LS164扩展的并行输出口" class="lazyload"></p>
 <h3 id="方式0接收"><a href="#方式0接收" class="headerlink" title="方式0接收"></a>方式0接收</h3><h4 id="接收过程"><a href="#接收过程" class="headerlink" title="接收过程"></a>接收过程</h4><p>​    方式0接收，<strong>REN</strong>为串行口允许接收控制位，<strong>REN</strong>=0，禁止接收；<strong>REN</strong> = 1，允许接收。<br>​    当向SCON寄存器写入控制字（设置为方式0，并使REN位置1，同时RI = 0）时，产生一个正脉冲，串行口开始接收数据。<br>​    引脚RXD为数据输入端，TXD为移位脉冲信号输出端，接收器以$$\frac{f_{osc}}{12}$$的固定波特率采样RXD引脚的数据信息，当接收完8位数据时，中断标志RI置1，表示一帧数据接收完毕，可进行下一帧数据的接收，时序如图所示。</p>
-<p><img src="/image/image-20210513185646457.png" alt="方式0接收时序"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513185646457.png" alt="方式0接收时序" class="lazyload"></p>
 <h3 id="方式0接收具体应用"><a href="#方式0接收具体应用" class="headerlink" title="方式0接收具体应用"></a>方式0接收具体应用</h3><p>如图为串行口外接两片8位并行输入串行输出的寄存器74LS165扩展两个8位并行输入口的电路。<br>当74LS165的 $$S/\bar L$$ 端由高到低跳变时，并行输入端的数据被置入寄存器；当 $$S/\bar L$$   = 1，且时钟禁止端（第15脚）为低电平时，允许TXD（P3.1）串行移位脉冲输入，这时在移位脉冲作用下，数据由右向左方向移动，以串行方式进入串行口的接收缓冲器中。</p>
-<p><img src="/image/image-20210513190135104.png" alt="扩展74LS165作为并行输入口"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513190135104.png" alt="扩展74LS165作为并行输入口" class="lazyload"></p>
 <p>其中：</p>
 <blockquote>
 <p><strong>TXD</strong>（P3.1）作为移位脉冲输出与所有75LS165的移位脉冲输入端CP相连；<br><strong>RXD</strong>（P3.0）作为串行数据输入端与74LS165的串行输出端QH相连；P1.0与 $$S/\bar L$$ 相连，用来控制74LS165的串行移位或并行输入；<br>74LS165的时钟禁止端（第15脚）接地，表示允许时钟输入。<br>当扩展多个8位输入口时，相邻两芯片的首尾（$$Q_H$$与SIN）相连。</p>
@@ -290,33 +244,33 @@
 </blockquote>
 <h2 id="方式1"><a href="#方式1" class="headerlink" title="方式1"></a>方式1</h2><p>方式1为双机串行通信方式。</p>
 <p>方式1一帧数据为10位，1个起始位（0），8个数据位，1个停止位（1），先发送或接收最低位。帧格式如图所示。</p>
-<p><img src="/image/image-20210513190806623.png" alt="方式1的帧格式"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513190806623.png" alt="方式1的帧格式" class="lazyload"></p>
 <p>方式1为波特率可变的8位异步通信接口。波特率由下式确定：<br>    $${方式1波特率} = \frac{2^{SMOD}}{32}*定时器T1的溢出率$$<br>式中，<strong>SMOD</strong>为<strong>PCON</strong>寄存器的最高位的值（0或1）。</p>
 <h3 id="方式1发送"><a href="#方式1发送" class="headerlink" title="方式1发送"></a>方式1发送</h3><p>​    方式1输出时，数据位由<strong>TXD</strong>端输出，发送一帧信息为10位：1位起始位0，8位数据位（先低位）和1位停止位1。当CPU执行一条数据写SBUF的指令，就启动发送。发送时序如图，图中TX时钟的频率就是发送的波特率。<br>​    发送开始时，内部发送控制信号 变为有效，将起始位向TXD脚（P3.1）输出，此后每经过一个TX时钟周期，便产生一个移位脉冲，并由TXD引脚输出一个数据位。8位数据位全部发送完毕后，中断标志位<strong>TI</strong>置1。</p>
-<p><img src="/image/image-20210513191200642.png" alt="方式1发送时序"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513191200642.png" alt="方式1发送时序" class="lazyload"></p>
 <h3 id="方式1-接收"><a href="#方式1-接收" class="headerlink" title="方式1 接收"></a>方式1 接收</h3><p>​    方式1接收时（<strong>REN</strong> = 1），数据从<strong>RXD</strong>（P3.0）引脚输入。当检测到起始位的负跳变，则开始接收。接收时序见图。<br>​    接收时，定时控制信号有两种，一种是接收移位时钟（RX时钟），它的频率和传送的波特率相同，另一种是位检测器采样脉冲，频率是RX时钟的16倍。以波特率的16倍速率采样<strong>RXD</strong>脚状态。<strong>当采样到RXD端从1到0的负跳变时就启动检测器，接收的值是3次连续采样（第7、8、9个脉冲时采样）取两次相同的值，以确认起始位（负跳变）的开始，较好地消除干扰引起的影响。</strong></p>
-<p><img src="/image/image-20210513191302721.png" alt="方式1接收时序"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513191302721.png" alt="方式1接收时序" class="lazyload"></p>
 <center>方式1接收时序
 
 
 <p>当确认起始位有效时，开始接收一帧信息。每一位数据，也都进行<strong>3次连续采样</strong>（第7、8、9个脉冲采样），接收的值是3次采样中至少两次相同的值。当一帧数据接收完毕后，同时满足以下两个条件，接收才有效。<br>（1） <strong>RI</strong> = 0，即上一帧数据接收完成时，RI = 1发出的中断请求已被响应，SBUF中的数据已被取走，说明“接收SBUF”已空。</p>
 <p>（2）<strong>SM2</strong> = 0或收到的停止位 = 1（方式1时，停止位已进入RB8），则将接收到的数据装入SBUF和RB8（装入的是停止位），且中断标志RI置“1”。<br>若不同时满足两个条件，收的数据不能装入SBUF，该帧数据将丢弃。</p>
 <h2 id="方式2"><a href="#方式2" class="headerlink" title="方式2"></a>方式2</h2><p>方式2和方式3，为9位异步通信接口。每帧数据为11位，1位起始位0，8位数据位（先低位），1位可程控为1或0的第9位数据和1位停止位。方式2、方式3帧格式如图所示。</p>
-<p><img src="/image/image-20210513191616938.png" alt="方式2、方式3的帧格式"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513191616938.png" alt="方式2、方式3的帧格式" class="lazyload"></p>
 <p>$$ {方式2的波特率} = \frac{2^{SMOD}}{64}*f_{OSC}$$</p>
 <h3 id="方式2发送"><a href="#方式2发送" class="headerlink" title="方式2发送"></a>方式2发送</h3><p>发送前，先根据通信协议由软件设置<strong>TB8</strong>（如奇偶校验位或多机通信的地址/数据标志位），然后将要发送的数据写入SBUF，即启动发送。TB8自动装入第9位数据位，逐一发送。发送完毕，使TI位置“1”。<br>发送时序如图所示。</p>
-<p><img src="/image/image-20210513191912351.png" alt="方式2和方式3发送时序"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513191912351.png" alt="方式2和方式3发送时序" class="lazyload"></p>
 <h3 id="方式2接收"><a href="#方式2接收" class="headerlink" title="方式2接收"></a>方式2接收</h3><p><strong>SM0</strong>、<strong>SM1=10</strong>，且<strong>REN</strong> = 1时，以方式2接收数据。数据由RXD端输入，接收11位信息。当位检测逻辑采样到RXD的负跳变，判断起始位有效，便开始接收一帧信息。在接收完第9位数据后，需满足以下两个条件，才能将接收到的数据送入SBUF（接收缓冲器）。</p>
 <ol>
 <li>RI = 0，意味着接收缓冲器为空。</li>
 <li>SM2 = 0或接收到的第9位数据位RB8 = 1。</li>
 </ol>
 <p>当满足上述两个条件时，收到的数据送SBUF（接收缓冲器），第9位数据送入RB8，且RI置“1”。若不满足这两个条件，接收的信息将被丢弃。<br>串行口方式2和方式3接收时序如图所示。</p>
-<p><img src="/image/image-20210513192210990.png" alt="方式2和方式3接收时序"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513192210990.png" alt="方式2和方式3接收时序" class="lazyload"></p>
 <h2 id="方式3"><a href="#方式3" class="headerlink" title="方式3"></a>方式3</h2><p>SM0、SM1=11时，方式3。为波特率可变的9位异步通信方式，除了波特率外，方式3和方式2相同。</p>
 <p>$$ {方式3波特率} =   \frac{2^{SMOD}}{32}*{定时器T1的溢出率}$$</p>
 <h1 id="三、多机通信"><a href="#三、多机通信" class="headerlink" title="三、多机通信"></a>三、多机通信</h1><p>多个单片机可利用串行口进行多机通信，经常采用如图所示的<strong>主从式结构</strong>。系统中有1个主机（单片机或其他有串行接口的微机）和多个单片机组成的从机系统。主机的<strong>RXD</strong>与所有从机的<strong>TXD</strong>端相连，<strong>TXD</strong>与所有从机的<strong>RXD</strong>端相连。从机地址分别为01H、02H和03H。</p>
-<p><img src="/image/image-20210513192515880.png" alt="多机通信系统示意图"></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513192515880.png" alt="多机通信系统示意图" class="lazyload"></p>
 <p>​    主从式是指多机系统中，只有一个主机，其余全是从机。主机发送的信息可以被所有从机接收，任何一个从机发送的信息，只能由主机接收。从机和从机之间不能进行直接通信，只能经主机才能实现。<br>​    多机通信的工作原理：<br>​    要保证主机与所选择的从机通信，须保证串口有识别功能。<strong>SCON</strong>中的<strong>SM2</strong>位就是为满足这一条件设置的多机通信控制位。其工作原理是在串行口以方式2（或方式3）接收时，若SM2 = 1，则表示进行多机通信，可能以下<strong>两种情况</strong>：</p>
 <ol>
 <li>从机接收到的主机发来的<strong>第9位数据RB8=1</strong>时，前8位数据才装入SBUF，并置中断标志RI = 1，向CPU发出中断请求。<br>在中断服务程序中，从机把接收到的SBUF中的数据存入数据缓冲区中。</li>
@@ -337,478 +291,83 @@
 </li>
 </ol>
 </center>
-        </div>
-        <footer class="article-footer">
-            
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>alex19<br>
+    <strong>Link：</strong><a href="http://yan19.top/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" title="http:&#x2F;&#x2F;yan19.top&#x2F;2021&#x2F;05&#x2F;13&#x2F;%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yan19.top&#x2F;2021&#x2F;05&#x2F;13&#x2F;%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
 
 
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
 
-    <a data-url="http://yan19.top/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" data-id="ckon0l2ys0001egx36sel2gg9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
 </script>
-
-        </footer>
-    </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "alex19"
-        },
-        "headline": "单片机的串行口",
-        "image": "http://yan19.top/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png",
-        "keywords": "",
-        "genre": "",
-        "datePublished": "2021-05-13",
-        "dateCreated": "2021-05-13",
-        "dateModified": "2021-05-19",
-        "url": "http://yan19.top/2021/05/13/单片机的串行口/",
-        "description": "一、串行口的结构
-
-有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。
-
-发送缓冲器只能写入不能读出
-
-接收缓冲器只能读出不能写入
-
-两个缓冲器共用一个特殊功能寄存器字节地址（99H）。
-
-控制寄存器共有两个：特殊功能寄存器SCON和PCON。
-
-
-串行口控制寄存器SCON字节地址98H，可位寻址，位地址为98H～9FH。
-
-
-SM0、SM1——串行口4种工作",
-        "wordCount": 273
-    }
-</script>
-
-</article>
-
-    <section id="comments">
-    
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-
-    
-    </section>
-
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>follow:</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-twitter"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-facebook"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-stack-overflow"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-weibo"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-rss"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            单片机的硬件结构
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">汇编语言程序设计</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
-    
-    <div class="widgets-container">
-        
-            
-                
-
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519195525424.png)" alt="单片机的硬件结构" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" class="title">单片机的硬件结构</a></p>
-                            <p class="item-date"><time datetime="2021-05-20T15:00:53.000Z" itemprop="datePublished">2021-05-20</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png)" alt="单片机的串行口" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="title">单片机的串行口</a></p>
-                            <p class="item-date"><time datetime="2021-05-13T14:55:29.000Z" itemprop="datePublished">2021-05-13</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="title">汇编语言程序设计</a></p>
-                            <p class="item-date"><time datetime="2021-05-13T14:53:33.000Z" itemprop="datePublished">2021-05-13</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" class="title">Markdown的一些语法说明</a></p>
-                            <p class="item-date"><time datetime="2021-04-21T11:08:05.000Z" itemprop="datePublished">2021-04-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/04/20/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/04/20/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2021-04-20T11:58:05.762Z" itemprop="datePublished">2021-04-20</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-            
-                
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">tags</h3>
-        <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">tag cloud</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
-        
-    </div>
-</aside>
-
-                </div>
-            </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2021 alex19</p>
-                
-                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
-                
-            </div>
-            <div class="footer-plugins">
+</section>
+  </div>
+</div>
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool"> 
               
-    
-
-
+                
+              
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
             </div>
+          </div>
         </div>
     </div>
-</footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
 
-    </div>
-    
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    var disqus_url = 'http://yan19.top/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
+<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ 
 
+<script src="/js/app.js?v=1621573607331"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
 
-    
-        
-<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-share.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-video.min.js"></script>
-
-    
-    
-        
-<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-
-    
-    
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-        </script>
-        
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
-
-    
-
-    
-    
-    
+  
 
 
 
-<!-- Custom Scripts -->
-
-<script src="/js/main.js"></script>
 
 
 <script type="text/x-mathjax-config">
@@ -827,4 +386,5 @@ SM0、SM1——串行口4种工作",
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
+
 </html>

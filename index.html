@@ -1,787 +1,890 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
+  
+  <title>十九</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
 
-    
-
-    
-    <title>十九</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta property="og:type" content="website">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta property="og:type" content="website">
 <meta property="og:title" content="十九">
 <meta property="og:url" content="http://yan19.top/index.html">
 <meta property="og:site_name" content="十九">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="alex19">
 <meta name="twitter:card" content="summary">
-    
-
-    
-        <link rel="alternate" href="/" title="十九" type="application/atom+xml" />
-    
-
-    
-
-    
-<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-    
-<link rel="stylesheet" href="/libs/titillium-web/styles.css">
-
-    
-<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-
-    
-<link rel="stylesheet" href="/css/style.css">
-
-
-    
-<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-
-    
-    
-    
-    
-
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
+  <link rel="stylesheet" href="/css/style.css?v=1621573607351">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1621573607351">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1621573607351">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
-                                </li>
-                            
-                                    
-                                
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="alex19" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="alex19"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="alex19">
+            <img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="alex19" alt="alex19">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>5</div>
+        <div><span>Tags</span>1</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
     </div>
 </div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=5CfKHun" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/20238211" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+    </div>
+    
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 alex19
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="单片机的硬件结构" class="lazyload">
+                    <h1>单片机的硬件结构</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2021年05月20日</a>
+            <a><i class="nexmoefont icon-areachart"></i>5k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 21 分钟</a>
+        </div>
+
+        <article>
+            
+                <blockquote>
+<ul>
+<li>硬件结构、引脚功能、存储器结构、特殊功能寄存器功能、4个并行I/O口的结构和特点，</li>
+<li>复位电路和时钟电路设计,节电工作模式。</li>
+</ul>
+</blockquote>
+<h1 id="一、-单片机的硬件组成"><a href="#一、-单片机的硬件组成" class="headerlink" title="一、 单片机的硬件组成"></a>一、 单片机的硬件组成</h1><p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519195525424.png" alt="片内结构" class="lazyload"></p>
+<ol>
+<li><strong>CPU（微处理器）</strong><br>8位，包括运算器和控制器两部分，还有位处理功能。</li>
+<li><strong>数据存储器（RAM）</strong><br>128B（52子系列为256B），最多可扩64KB。片内RAM为高速RAM，可加快速度和降低功耗。</li>
+<li><strong>程序存储器（Flash ROM）</strong><br>4KB Flash（AT89S52 则为8KB；AT89C55片内20KB），如不够，片外可外扩至64KB。</li>
+<li><strong>中断系统</strong><br>5个中断源，2级中断优先权。</li>
+<li><strong>定时器/计数器</strong><br>2个16位定时器/计数器（52子系列有3个），4种工作方式。</li>
+<li><strong>1个看门狗定时器WDT</strong><br>当CPU由于干扰使程序陷入死循环或跑飞时，WDT可使程序恢复正常运行。</li>
+<li><strong>串行口</strong><br>全双工异步串行口，4种工作方式。可进行串行通信，扩展并行I/O口，可与多个单片机构成多机系统。</li>
+<li><strong>P1口、P2口、P3口、P0口</strong>：4个8位并行I/O口。</li>
+<li><strong>特殊功能寄存器（SFR）</strong><br>26个，对片内各功能部件管理、控制和监视。是各功能部件的<strong>控制寄存器和状态寄存器</strong>，映射在片内RAM区<strong>80H～FFH</strong>内。</li>
+</ol>
+<h1 id="二、引脚功能"><a href="#二、引脚功能" class="headerlink" title="二、引脚功能"></a>二、引脚功能</h1><p>多采用40只引脚双列直插。<br>按功能可分为如下3类：</p>
+<ol>
+<li><strong>电源及时钟引脚</strong>— VCC、VSS；XTAL1、XTAL2。</li>
+<li><strong>控制引脚</strong>— PSEN<em>、ALE/PROG</em>、EA*/VPP、RST（RESET）</li>
+<li><strong>I/O口引脚</strong>— P0、P1、P2、P3，为4个8位I/O口。</li>
+</ol>
+<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519200004116.png"></p>
+<h2 id="电源及时钟引脚"><a href="#电源及时钟引脚" class="headerlink" title="电源及时钟引脚"></a>电源及时钟引脚</h2><h3 id="电源引脚"><a href="#电源引脚" class="headerlink" title="电源引脚"></a>电源引脚</h3><ol>
+<li>VCC（40脚）：+5V电源。</li>
+<li>VSS（20脚）：数字地</li>
+</ol>
+<h3 id="时钟引脚"><a href="#时钟引脚" class="headerlink" title="时钟引脚"></a>时钟引脚</h3><ol>
+<li><strong>XTAL1（19脚）：输入端。</strong>使用片内振荡器时，应接外部石英晶体和微调电容。外接时钟源时，该脚接外部时钟振荡器输出的信号。</li>
+<li><strong>XTAL2（18脚）：</strong>片内振荡器反相放大器的<strong>输出端</strong>。<ul>
+<li>使用片内振荡器，该脚连接外部石英晶体和微调电容。</li>
+<li>当使用<strong>外部时钟源</strong>时，本脚<strong>悬空</strong>。</li>
+</ul>
+</li>
+</ol>
+<h2 id="控制引脚"><a href="#控制引脚" class="headerlink" title="控制引脚"></a>控制引脚</h2><ol>
+<li><p><strong>RST (RESET，9脚)</strong></p>
+<p>复位信号输入，加<strong>持续时间大于2个机器周期的高电平</strong>，可使单片机复位。正常工作应≤0.5V。</p>
+<p>当看门狗定时器溢出输出时，该脚将输出长达<strong>96个时钟振荡周期的高电平</strong>。</p>
+</li>
+<li><p><em><em>EA</em>/VPP (Enable Address/Voltage Pulse of Programing，31脚)</em>*</p>
+<ol>
+<li><p>**EA***：第一功能：允许访问外部程序存储器控制。</p>
+<ol>
+<li><p><em><em>EA</em>=1</em>*    </p>
+<p>​    <strong>PC值≤0FFFH</strong>时，单片机读<strong>片内</strong>4KB Flash中的程序，<br>​    <strong>PC值 &gt;0FFFH</strong> （超出片内4KB Flash地址范围）时，转向读取片外60KB（1000H-FFFFH）程序存储器空间中的程序。</p>
+</li>
+<li><p><strong>EA*=0</strong><br><strong>只读取外部的程序存储器</strong>中的内容，读取地址范围0000H～FFFFH，片内4KB Flash无效。</p>
+</li>
+<li><p><strong>VPP：第二功能</strong>，对片内Flash编程，接编程电压。</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><strong>ALE/PROG</strong>*（Address Latch Enable/PROGramming，30脚）</p>
+<ol>
+<li><p><strong>ALE</strong>：<strong>第一功能</strong><br>见下页图，为访问外部存储器提供<strong>低8位</strong>地址锁存信号，将<strong>低8位地址锁存在片外地址锁存器</strong>中。</p>
+<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519201252187.png"></p>
+<p>   此外，单片机运行时，<strong>ALE端一直有正脉冲信号输出</strong>，频率为时钟的$$f_{osc}$$的1/6。<br>   注意，每当AT89S51访问外部RAM时（执行MOVX类指令），要丢失一个ALE脉冲。<br>   如需要，可将特<strong>殊功能寄存器AUXR</strong>（地址8EH，将在后面介绍）的<strong>第0位</strong>（ALE禁止位）置1，来<strong>禁止ALE操作</strong>，但访问外部程序存储器或外部数据存储器指令“MOVC”或“MOVX”时，ALE仍然有效。即<strong>ALE禁止位不影响对外部存储器的访问</strong>。</p>
+</li>
+<li><p><strong>PROG*：第二功能，对片内 Flash编程的编程脉冲输入</strong></p>
+</li>
+</ol>
+</li>
+<li><p><em><em>PSEN</em> （Program Strobe ENable，29脚）</em>*</p>
+<pre><code>片外程序存储器读选通信号，低有效。
+</code></pre>
+</li>
+</ol>
+<h2 id="并行I-O口引脚"><a href="#并行I-O口引脚" class="headerlink" title="并行I/O口引脚"></a>并行I/O口引脚</h2><ol>
+<li><p><strong>P0口：8位，漏极开路的双向I/O口</strong></p>
+<p>可作为系统总线<strong>低8位地址总线</strong>及<strong>数据总线分时复用端口</strong>。<br>也可作<strong>通用I/O口</strong>，需加上拉电阻，这时为准双向口。如作通用I/O输入，应先向端口写入1，可驱动8个LS型TTL负载。</p>
+</li>
+<li><p><strong>P1口：8位，准双向I/O口，具有内部上拉电阻。</strong></p>
+<p><strong>准双向</strong>I/O口，作为I/O输入时，应先向端口锁存器写1.</p>
+<p>​    P1口可驱动<strong>4个LS型TTL负载</strong>。</p>
+<p>​    <strong>P1.5/MOSI、P1.6/MISO和P1.7/SCK</strong><br>   可对片内Flash存储器串行<strong>编程和校验</strong>，它们分别是串行数据输入、输出和移位脉冲引脚。</p>
+</li>
+<li><p>P2口：8位，<strong>准双向</strong>I/O口，具有内部<strong>上拉电阻</strong>。<br>当外扩存储器及I/O口时，P2口输出<strong>高8位地址</strong>。<br>P2口也可作为<strong>通用I/O</strong>使用。当作输入时，应先向端口输出锁存器写1。<br>可驱动 <strong>4个LS型TTL负载</strong>。</p>
+</li>
+<li><p><strong>P3口</strong>：8位，<strong>准双向I/O口</strong>，具有内部上拉电阻。<br>可作为通用I/O口使用。如作通用I/O输入，应先向端口输出锁存器写入1。可驱动4个LS型TTL负载。<br>P3口还可提供<strong>第二功能</strong>，定义如表2-1，应熟记。</p>
+</li>
+</ol>
+<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519201640032.png"></p>
+<p>​    综上所述，<strong>P0口</strong>可作为总线口，为双向口。作为通用I/O使用时，为准双向口，这时需加上拉电阻。P1口、P2口、P3口均为准双向口。<br>   注意：<strong>准双向口与双向口的差别。</strong>准双向口仅有两个状态。而P0口作为总线口使用，口线内无上拉电阻，处于高阻“悬浮”态。故P0口为双向三态I/O口。<br>   为什么P0口要有高阻“悬浮”态？而准双向I/O口则无高阻的“悬浮”状态。<br>   准双向口作通用I/O输入，要向该口先写 “1”。</p>
+<h1 id="三、CPU"><a href="#三、CPU" class="headerlink" title="三、CPU"></a>三、CPU</h1><p>由运算器和控制器构成。</p>
+<h2 id="运算器"><a href="#运算器" class="headerlink" title="运算器"></a>运算器</h2><p>​    <strong>功能</strong>：对操作数进行算术、逻辑和位操作运算。<br>   <strong>组成</strong>：算术逻辑运算单元ALU、累加器A、位处理器、程序状态字寄存器PSW及两个暂存器等。</p>
+<ol>
+<li><p><strong>算术逻辑运算单元ALU</strong><br>可对8位变量<strong>逻辑运算</strong>（与、或、异或、循环、求补和清零），还可算术运算（加、减、乘、除）</p>
+<p>​    ALU还有<strong>位操作功能</strong>，对位变量进行位处理，如置“1”、清“0”、求补、测试转移及逻辑“与”、“或”等。</p>
+</li>
+<li><p><strong>累加器A</strong><br>使用最频繁的寄存器，可写为Acc。“A”与“Acc”书写的差别，将在第3章介绍。<br><strong>作用如下</strong>：<br>（1）ALU单元的输入数据源之一，又是运算结果存放单元。<br>（2）数据传送多通过A，数据中转站。为解决“瓶颈堵塞”问题，AT89S51增加了一部分可不经过累加器的传送指令。</p>
+<p>​    A进位标志<strong>Cy</strong>是同时又是位处理机的位累加器</p>
+</li>
+<li><p><strong>程序状态字寄存器PSW</strong><br>PSW（Program Status Word）位于片内特殊功能寄存器区，字节地址为D0H。<br>包含<strong>程序运行的状态信息</strong>，其中4位保存当前指令执行后的状态，供查询和判断。格式见图。</p>
+<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519202337074.png"></p>
+<p>​    PSW各位功能：</p>
+<ol>
+<li><strong>Cy（PSW.7）进位标志位</strong><br>可写为C。在算术和逻辑运算时，若有进位/借位，Cy＝1；否则，Cy＝0。在位处理器中，它是位累加器。</li>
+<li><strong>Ac（PSW.6）辅助进位标志位</strong><br>在BCD码运算时，用作十进位调整。即当D3位向D4位产生进位或借位时，Ac＝1；否则，Ac＝0。</li>
+<li><strong>F0（PSW.5）用户设定标志位</strong><br>由用户使用的一个状态标志位，用指令使它置“1”或清“0，控制程序流向，应充分利用。</li>
+<li><strong>RS1、RS0（PSW.4、PSW.3）4组工作寄存器区选择</strong><br>选择片内RAM区中的4组工作寄存器区中的某一组为当前工作寄存区。如表2-2。</li>
+</ol>
+<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/%5C%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84%5Cimage-20210519202356147.png"></p>
+<ol start="5">
+<li><p><strong>OV（PSW.2）溢出标志位</strong><br>当执行算术指令时，用来指示运算结果是否产生溢出。如溢出，OV=1；否则，OV=0。</p>
+</li>
+<li><p><strong>PSW.1</strong>位：保留位</p>
+</li>
+<li><p><strong>P（PSW.0）</strong>：<strong>奇偶标志位</strong>  指令执行完，A中“1”的个数是奇数还是偶数。</p>
+<p>P=1，A中“1”的个数为奇数。</p>
+<p>P=0，A中“1”的个数为偶数。   此标志位对串行通信有重要意义，常用奇偶检验来检验数据串行传输的可靠性。</p>
+</li>
+</ol>
+<h2 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h2><p>​    <strong>任务</strong>：识别指令，控制单片机各功能部件，保证各部分自动协调工作。<br>​    <strong>控制器包括</strong>：PC、指令寄存器、指令译码器、定时及控制逻辑电路等。功能:控制指令的读入、译码和执行，对各功能部件进行定时和逻辑控制。<br>​    <strong>程序计数器PC</strong>是一个独立的16位计数器，不可访问。单片机复位时，PC内容为0000H，从程序存储器0000H单元取指令,，执行程序。<br>​    <strong>PC工作过程</strong>：CPU取指令时，PC内容为所取指令的地址，程序存储器按此地址输出指令字节，同时PC自动加1。</p>
+<p>​    <strong>PC中内容变化轨迹</strong>决定程序流向。</p>
+<ul>
+<li>当顺序执行程序，PC自动加1；</li>
+<li>执行转移程序或子程序、中断子程序调用时，自动将其内容更改成所要转移的目的地址。</li>
+<li>PC计数宽度决定程序存储器地址范围。宽度16位，可对64KB（=216B）寻址。</li>
+</ul>
+</li>
+</ol>
+<h1 id="四、存储器的结构"><a href="#四、存储器的结构" class="headerlink" title="四、存储器的结构"></a>四、存储器的结构</h1><p>结构特点之一是哈佛结构，有各自的访问指令。<br>存储器空间分4类。</p>
+<ol>
+<li><strong>程序存储器空间</strong><br>片内和片外两部分。<br><strong>片内4KB Flash</strong> ，编程和擦除完全是电气实现。可用通用编程器对其编程，也可在线编程。<br>当片内4KB Flash 存储器不够用时，可外扩，最多可扩展至64KB程序存储器。</li>
+<li><strong>数据存储器空间</strong><br>片内与片外两部分。<br><strong>片内有128 B RAM</strong>（52子系列为256B）。<br>片内RAM 不够用时，在<strong>片外可扩展至64KB RAM</strong> 。</li>
+<li><strong>特殊功能寄存器SFR （Special Function Register）</strong><br>各功能部件的控制寄存器及状态寄存器。SFR综合反映了整个单片机基本系统内部实际的工作状态及工作方式。</li>
+<li><strong>位地址空间</strong><br>211个可寻址位。片内RAM（共128位）+SFR区（共83位）。</li>
+</ol>
+<h2 id="程序存储器空间"><a href="#程序存储器空间" class="headerlink" title="程序存储器空间"></a>程序存储器空间</h2><p>存程序和表格的固定常数。片内为4KB的Flash ，地址为<strong>0000H～0FFFH</strong>。16位地址线，外扩的程序存储器空间最大为64KB，地址为<strong>0000H～FFFFH</strong>。使用应注意：</p>
+<ol>
+<li>片内和片外两部分，访问片内还是片外程序存储器，由EA*脚电平确定。<br>EA*=1，CPU从片内0000H开始取指令，当PC值没有超出0FFFH时，只访问片内Flash ，当PC值超出0FFFH自动转向读片外程序存储器1000H～FFFFH 内的程序。<br>EA*=0，不理会片内4KB Flash 存储器，只执行片外程序存储器（0000H～FFFFH）中的程序。</li>
+<li>程序存储器5个固定单元为各中断源中断入口。见表2-3。</li>
+</ol>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520215746299.png" alt="表2-3" class="lazyload"></p>
+<h2 id="数据存储器空间"><a href="#数据存储器空间" class="headerlink" title="数据存储器空间"></a>数据存储器空间</h2><p>片内与片外两部分。</p>
+<ol>
+<li><p><strong>片内RAM</strong><br>片内数据存储器（RAM）共<strong>128个单元</strong>，字节地址为00H～7FH。结构见图2-4。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/%5C%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84%5Cimage-20210520222012343.png" alt="图2-4   片内RAM结构" class="lazyload"></p>
+<p><strong>00H～1FH</strong> 4组通用工作寄存器区，每区包含8B，为R7～R0。可用指令改变<strong>RS1、RS0</strong>两位来选择。<br><strong>20H～2FH</strong>的16个单元的128位可位寻址，也可字节寻址。</p>
+<p><strong>30H～7FH</strong>的单元只能字节寻址，用作存数据以及作为堆栈区。</p>
+</li>
+<li><p><strong>片外数据存储器</strong><br>当片内RAM不够用时，需外扩，最多可外扩64KB的RAM。<br><strong>注意，片内RAM与片外RAM两个空间是相互独立的</strong>，片内RAM与片外RAM的低128B的地址是相同的，但由于使用的是不同的访问指令，所以不会发生冲突。</p>
+</li>
+</ol>
+<h2 id="特殊功能寄存器（SFR）"><a href="#特殊功能寄存器（SFR）" class="headerlink" title="特殊功能寄存器（SFR）"></a>特殊功能寄存器（SFR）</h2><p>映射在片内RAM的 <strong>80H～FFH</strong> 区域中，共26个。SFR的名称及分布见表2-4 。有些可位寻址。<br>与AT89C51相比，新增5个SFR：DP1L、DP1H、AUXR、AUXR1和WDTRST，已在表2-4中标出。<br><strong>凡是可位寻址的SFR，字节地址末位只能是0H或8H。</strong><br>若<strong>读/写未定义单元</strong>，将得到一个随机数。<br>下面介绍部分SFR。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222052377.png" alt="表2-4" class="lazyload"></p>
+<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222101743.png"></p>
+<ol>
+<li><p><strong>堆栈指针SP</strong></p>
+<p>指示栈顶在内部RAM中的位置。<br>堆栈<strong>向上生长</strong>。单片机复位后，SP为07H，堆栈从08H单元开始，<strong>由于08H～1FH单元分别是属于1～3组的工作寄存器区，最好在复位后把SP值改置为60H或更大的值，避免堆栈与工作寄存器冲突</strong>。</p>
+<p><strong>堆栈主要为子程序调用和中断操作而设。保护断点和现场</strong></p>
+<ol>
+<li><strong>保护断点</strong>。无论<strong>子程序调用</strong>还是<strong>中断服务子程序调用</strong>，最终都要返回主程序。应预先把主程序断点在堆栈中保护起来，为程序正确返回做准备。</li>
+<li><strong>现场保护</strong>。执行子程序或中断服务子程序时，要用到一些寄存器单元，会破坏原有内容。要把有关寄存器单元的内容保存起来，送入堆栈，这就是所谓的“现场保护”。<br>两种操作：<strong>数据压入（PUSH）堆栈，数据弹出（POP）堆栈</strong>。</li>
+</ol>
+</li>
+<li><p><strong>寄存器B</strong></p>
+<p>为执行乘和除而设。不执行乘、除的情况下，可把它当作一个普通寄存器来使用。</p>
+<p><strong>乘法</strong>，两乘数分别在A、B中，执行乘法指令后，乘积在BA中<br><strong>除法</strong>，被除数取自A，除数取自B，商存放在A中，余数存B中。</p>
+</li>
+<li><p><strong>AUXR寄存器</strong></p>
+<pre><code>AUXR是辅助寄存器，其格式如图2-5：
+</code></pre>
+</li>
+</ol>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222243992.png" alt="图2-5  AUXR寄存器的格式" class="lazyload"></p>
+<p>其中:<br>    <strong>DISALE：ALE的禁止/允许位。</strong><br>        <strong>0</strong>：ALE有效，发出脉冲；<br>        <strong>1</strong>：ALE仅在执行MOVC和MOVX类指令时有效，不访问外部存储器时，ALE不输出脉冲信号；<br>    <strong>DISRTO：禁止/允许WDT溢出时的复位输出。</strong><br>        <strong>0</strong>：WDT溢出时，在RST引脚输出一个高电平脉冲；<br>        <strong>1</strong>：RST引脚仅为输入脚。<br>    <strong>WDIDLE：WDT在空闲模式下的禁止/允许位。</strong><br>         <strong>0</strong>： WDT在空闲模式<strong>继续计数</strong>；<br>         <strong>1</strong>： WDT在空闲模式<strong>暂停计数</strong>。</p>
+<ol start="4">
+<li><p><strong>数据指针DPTR0和DPTR1</strong><br>双数据指针寄存器，便于访问数据存储器。<br><strong>DPTR0</strong>：AT89C51<strong>原有</strong>的数据指针，<br><strong>DPTR1</strong>：新增加的数据指针。<br>寄存器AUXR1的DPS位用于选择两个数据指针。</p>
+<pre><code>  DPS=0，选用DPTR0；DPS=1，选用DPTR1。
+</code></pre>
+<p>可作为一个16位寄存器来用，也可作为两个独立的8位寄存器DP0H（或DP1H）和DP0L（或DP1L）来用</p>
+</li>
+<li><p><strong>AUXR1寄存器</strong><br>为辅助寄存器，格式如图2-6：<br> <strong>DPS：数据指针寄存器选择位</strong>。</p>
+<pre><code>       **0**：选择数据指针寄存器**DPTR0**；
+       **1：**选择数据指针寄存器**DPTR1**。
+</code></pre>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520222350211.png" alt="图2-6  AUXR1寄存器的格式" class="lazyload"></p>
+</li>
+<li><p><strong>看门狗定时器WDT</strong><br>WDT包含一个<strong>14位计数器和看门狗复位寄存器（WDTRST）。</strong><br><strong>WDT提供一种</strong>使程序恢复正常运行的有效手段。<br>有关WDT在抗干扰设计中的应用以及低功耗模式下运行的状态，将在相应章节具体介绍。<br>上面介绍的特殊功能寄存器，除SP和B以外，其余均为AT89S51在AT89C51基础上新增加的SFR。</p>
+</li>
+</ol>
+<h2 id="位地址空间"><a href="#位地址空间" class="headerlink" title="位地址空间"></a>位地址空间</h2><p>211个寻址位的位地址，位地址范围为 <strong>00H～FFH</strong>，其中 <strong>00H～7FH</strong> 这128位处于片内RAM 字节地址 20H～2FH 单元中，如表2-5所示。其余的83个可寻址位分布在特殊功能寄存器SFR中，如表2-6。<br>可被位寻址的特殊寄存器有11个，共有位地址88个，5个位未用，其余83个位的位地址离散地分布于片内数据存储器区字节地址为80H～FFH的范围内，<strong>其最低位的位地址等于其字节地址，且其字节地址的末位都为0H或8H。</strong></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520224555957.png" alt="表2-5" class="lazyload"></p>
+<h1 id="五、并行I-O端口"><a href="#五、并行I-O端口" class="headerlink" title="五、并行I/O端口"></a>五、并行I/O端口</h1><p>  <strong>4个8位</strong>并行I/O端口，为P0、P1、P2和P3。<br>  <strong>输出锁存器属特殊功能寄存器。</strong><br>  <strong>端口组成：每位均由输出锁存器、输出驱动器和输入缓冲器组成，</strong><br>   4个端口均可位寻址。</p>
+<h2 id="P0口"><a href="#P0口" class="headerlink" title="P0口"></a>P0口</h2><p><strong>双功能</strong>的8位并行端口，字节地址为<strong>80H</strong>，位地址为80H～87H。P0口某一位的位电路结构见图2-8。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210520224826604.png" alt="图2-8  P0口位电路结构" class="lazyload"></p>
+<ol>
+<li><p><strong>位电路结构</strong></p>
+<p>P0口位电路包括：</p>
+<ol>
+<li>1个数据输出的锁存器。</li>
+<li>2个三态的数据输入缓冲器，分别是用于读锁存器数据的输入缓冲器BUF1和读引脚数据的输入缓冲器BUF2。</li>
+<li>一个多路转接开关MUX，它的一个输入来自锁存器的 Q*端，另一个输入为地址/数据信号的反相输出。MUX由“控制”信号控制，实现锁存器输出和地址/数据信号间转接。</li>
+<li>数据输出的控制和驱动电路，由2个场效应管（FET）组成。</li>
+</ol>
+</li>
+<li><p>工作过程分析</p>
+<ol>
+<li><p>P0口用作地址/数据总线<br>P0口作为复用的地址/数据总线使用。<br>当作为地址或数据输出时，“控制”信号为1，硬件自动使转接开关MUX打向上面，接通反相器的输出，同时使“与门” 开启。<br>当输出的地址/数据信息=1，“与门”输出为1，上方场效应管导通，下方场效应管截止，P0.x引脚输出为1；<br>当输出的地址/数据信息=0，上方场效应管截止，下方场效应管导通，P0.x引脚输出为0。</p>
+<p>由上、下两个场效应管形成的推拉式结构，大大提高负载能力，上方的场效应管这时起到内部上拉电阻的作用。<br>当P0口作为数据输入时，仅从外部引脚读入信息， “控制”信号为0，MUX接通锁存器Q*端。<br>P0口作为地址/数据复用方式访问外部存储器时，CPU自动向P0口写入FFH，使下方场效应管截止，上方场效应管由于控制信号为0也截止，从而保证数据信息的高阻抗输入，从外部输入的数据直接由P0.x引脚通过输入缓冲器BUF2进入内部总线。</p>
+<p>具有高阻抗输入的I/O口应具有高电平、低电平和高阻抗3种状态的端口。因此，P0口作为地址/数据总线使用时是真正的双向端口，简称双向口。 </p>
+</li>
+<li><p>P0口用作通用I/O口<br>对应的“控制”信号=0，MUX打向下面，接通锁存器的Q*端，“与门”输出为0，上方场效应管截止，形成的P0口输出电路为漏极开路输出。<br>P0口作输出口时，CPU的“写”脉冲加在D锁存器的CP端，内部总线上的数据写入D锁存器，并由引脚P0.x输出。</p>
+<p>当D锁存器为1时， Q*端为0，下方场效应管截止，输出为漏极开路，此时，必须外接上拉电阻才能有高电平输出；当D锁存器为0时，下方场效应管导通，P0口输出为低电平。<br>P0口作I/O输入使用时，两种读入方式：“读锁存器”和“读引脚”。<br>当CPU发出“读锁存器”指令时，锁存器的状态由Q端经上方的三态缓冲器BUF1进入内部总线；<br>当CPU发出“读引脚”指令时，锁存器的输出状态Q=1（Q*端为0），而使下方场效应管截止，引脚的状态经下方的三态缓冲器BUF2进入内部总线。</p>
+</li>
+</ol>
+</li>
+<li><p>P0口总结<br>双功能口——地址/数据复用口和通用I/O口。</p>
+<ol>
+<li>当用作地址/数据复用口时，为真正双向口，     </li>
+<li>当P0口用作通用I/O口时，需在片外接上拉电阻，端口不存在高阻（悬浮）状态，是一准双向口。<br>为保证正确读入引脚，应先向锁存器写1。<br> 单片机复位后，锁存器自动被置1；<br> P0口大多作地址/数据复用口，就不能再作通用I/O口使用。</li>
+</ol>
+</li>
+</ol>
+<p><img src="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/%5C%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84%5Cimage-20210520225838757.png"></p>
+<h2 id="P1口"><a href="#P1口" class="headerlink" title="P1口"></a>P1口</h2>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="单片机的串行口" class="lazyload">
+                    <h1>单片机的串行口</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2021年05月13日</a>
+            <a><i class="nexmoefont icon-areachart"></i>3.9k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 16 分钟</a>
+        </div>
+
+        <article>
+            
+                <h1 id="一、串行口的结构"><a href="#一、串行口的结构" class="headerlink" title="一、串行口的结构"></a>一、串行口的结构</h1><p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="串行口的内部结构图" class="lazyload"></p>
+<ul>
+<li><p>有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。</p>
+</li>
+<li><p>发送缓冲器只能写入不能读出</p>
+</li>
+<li><p>接收缓冲器只能读出不能写入</p>
+</li>
+<li><p>两个缓冲器共用一个特殊功能寄存器字节地址（99H）。</p>
+</li>
+<li><p>控制寄存器共有两个：特殊功能寄存器SCON和PCON。</p>
+</li>
+</ul>
+<h2 id="串行口控制寄存器SCON"><a href="#串行口控制寄存器SCON" class="headerlink" title="串行口控制寄存器SCON"></a>串行口控制寄存器SCON</h2><p>字节地址98H，<strong>可位寻址</strong>，位地址为98H～9FH。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8SCON%E7%9A%84%E6%A0%BC%E5%BC%8F.png" alt="串行口控制寄存器SCON的格式" class="lazyload"></p>
+<ol>
+<li><p><strong>SM0、SM1</strong>——串行口4种工作方式选择位</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513170528526.png" alt="串行口的4种工作方式" class="lazyload"></p>
+</li>
+<li><p><strong>SM2</strong>——多机通信控制位</p>
+<blockquote>
+<p>多机通信是在方式2和方式3下进行。当串口以方式2或方式3接收时，如果SM2 = 1，则只有当接收到的第9位数据（RB8）为“1”时，才使RI置“1”，产生中断请求，并将接收到的前8位数据送入SBUF。<br>当接收到的第9位数据（RB8）为“0”时，则将接收到的前8位数据丢弃。</p>
+<p>当SM2 = 0时，则不论第9位数据是1还是0，都将前8位数据送入SBUF中，并使RI置1，产生中断请求。<br>在方式1时，如果SM2 = 1，则只有收到有效的停止位时才会激活RI。<br>在方式0时，SM2必须为0。</p>
+</blockquote>
+</li>
+<li><p><strong>REN</strong>——允许串行接收位。</p>
+<blockquote>
+<p>由软件置“1”或清“0”。</p>
+<p><strong>REN=1</strong>，允许串行口接收数据。</p>
+<p><strong>REN=0</strong>，禁止串行口接收数据。</p>
+</blockquote>
+</li>
+<li><p><strong>TB8</strong>——发送的第9位数据</p>
+<blockquote>
+<p>方式2和方式3，TB8是要发送的第9位数据，其值由软件置“1”或清“0”。在<strong>双机串行通信</strong>时，一般作为<strong>奇偶校验位</strong>使用；在<strong>多机串行通信</strong>中用来表示主机发送的是地址帧还是数据帧，TB8=1为<strong>地址帧</strong>，TB8=0为<strong>数据帧</strong>。</p>
+</blockquote>
+</li>
+<li><p><strong>RB8</strong>——接收的第9位数据</p>
+<blockquote>
+<p>方式2和方式3，RB8存放接收到的第9位数据。在方式1，如SM2 = 0，RB8是接收到的停止位。在方式0，不使用RB8。</p>
+</blockquote>
+</li>
+<li><p><strong>TI</strong>——发送中断标志位</p>
+<blockquote>
+<p>方式0，串行发送的第8位数据结束时TI由硬件置“1”，在其他方式中，串行口发送停止位的开始时置TI 为“1”。</p>
+<p>TI =1，表示一帧数据发送结束。TI的状态可供软件查询，也可申请中断。CPU响应中断后，在中断服务程序中向SBUF写入要发送的下一帧数据。TI必须由软件清“0”。</p>
+</blockquote>
+</li>
+<li><p><strong>RI</strong>——接收中断标志位</p>
+<blockquote>
+<p>方式0时，接收完第8位数据时，RI由硬件置“1”。在其他工作方式中，串行接收到停止位时，该位置“1”。RI = 1，表示一帧数据接收完毕，并申请中断，要求CPU从接收SBUF取走数据。该位的状态也可供软件查询。RI必须由软件清“0”。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="特殊功能寄存器PCON"><a href="#特殊功能寄存器PCON" class="headerlink" title="特殊功能寄存器PCON"></a>特殊功能寄存器PCON</h2><blockquote>
+<p>字节地址为87H，不能位寻址。</p>
+</blockquote>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513171424127.png" alt="特殊功能寄存器PCON的格式" class="lazyload"></p>
+<blockquote>
+<p>仅最高位SMOD与串口有关，其他各位的功能已在第2章的节电工作方式一节中作过介绍。</p>
+</blockquote>
+<p>SMOD：波特率选择位。<br>例如，方式1的波特率计算公式为</p>
+<blockquote>
+<p> 方式1波特率 =  $$ \frac{2^{SMOD}}{32}*(定时器T1的溢出率) $$</p>
+</blockquote>
+<p>当SMOD = 1时，要比SMOD = 0时的波特率加倍，所以也称SMOD位为波特率倍增位。</p>
+<h1 id="二、-串行口的四种工作方式"><a href="#二、-串行口的四种工作方式" class="headerlink" title="二、 串行口的四种工作方式"></a>二、 串行口的四种工作方式</h1><h2 id="方式0"><a href="#方式0" class="headerlink" title="方式0"></a>方式0</h2><p><strong>方式0</strong>为同步移位寄存器输入/输出方式。该方式并不用于两个AT89S51单片机之间的异步串行通信，而是用于串行口外接移位寄存器，扩展并行I/O口。<br>8位数据为一帧，无起始位和停止位，先发送或接收最低位。波特率固定，为$$\frac{f_{osc}}{12}$$。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513172734492.png" alt="方式0的帧格式" class="lazyload"></p>
+<h3 id="方式0发送"><a href="#方式0发送" class="headerlink" title="方式0发送"></a>方式0发送</h3><p>当CPU执行一条将数据写入发送缓冲器SBUF的指令时，产生一个<strong>正脉冲</strong>，串行口开始把SBUF中的8位数据以$$\frac{f_{osc}}{12}$$的固定波特率从RXD引脚串行输出，低位在先，TXD引脚输出同步移位脉冲，发送完8位数据，中断标志位TI置“1”。 </p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513173044714.png" alt="方式0发送时序" class="lazyload"></p>
+<center>方式0发送时序</center>
+
+<h3 id="方式0发送具体应用"><a href="#方式0发送具体应用" class="headerlink" title="方式0发送具体应用"></a>方式0发送具体应用</h3><p>如图所示为方式0发送的一个具体应用，通过串行口外接8位串行输入并行输出移位寄存器74LS164，扩展两个8位并行输出口的具体电路。<br>方式0发送时，串行数据由P3.0（RXD端）送出，移位脉冲由P3.1（TXD端）送出。<br>在移位脉冲的作用下，串行口发送缓冲器的数据逐位地从P3.0串行移入74LS164中。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513185249489.png" alt="外接串入并出移位寄存器74LS164扩展的并行输出口" class="lazyload"></p>
+<h3 id="方式0接收"><a href="#方式0接收" class="headerlink" title="方式0接收"></a>方式0接收</h3><h4 id="接收过程"><a href="#接收过程" class="headerlink" title="接收过程"></a>接收过程</h4><p>​    方式0接收，<strong>REN</strong>为串行口允许接收控制位，<strong>REN</strong>=0，禁止接收；<strong>REN</strong> = 1，允许接收。<br>​    当向SCON寄存器写入控制字（设置为方式0，并使REN位置1，同时RI = 0）时，产生一个正脉冲，串行口开始接收数据。<br>​    引脚RXD为数据输入端，TXD为移位脉冲信号输出端，接收器以$$\frac{f_{osc}}{12}$$的固定波特率采样RXD引脚的数据信息，当接收完8位数据时，中断标志RI置1，表示一帧数据接收完毕，可进行下一帧数据的接收，时序如图所示。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513185646457.png" alt="方式0接收时序" class="lazyload"></p>
+<h3 id="方式0接收具体应用"><a href="#方式0接收具体应用" class="headerlink" title="方式0接收具体应用"></a>方式0接收具体应用</h3><p>如图为串行口外接两片8位并行输入串行输出的寄存器74LS165扩展两个8位并行输入口的电路。<br>当74LS165的 $$S/\bar L$$ 端由高到低跳变时，并行输入端的数据被置入寄存器；当 $$S/\bar L$$   = 1，且时钟禁止端（第15脚）为低电平时，允许TXD（P3.1）串行移位脉冲输入，这时在移位脉冲作用下，数据由右向左方向移动，以串行方式进入串行口的接收缓冲器中。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513190135104.png" alt="扩展74LS165作为并行输入口" class="lazyload"></p>
+<p>其中：</p>
+<blockquote>
+<p><strong>TXD</strong>（P3.1）作为移位脉冲输出与所有75LS165的移位脉冲输入端CP相连；<br><strong>RXD</strong>（P3.0）作为串行数据输入端与74LS165的串行输出端QH相连；P1.0与 $$S/\bar L$$ 相连，用来控制74LS165的串行移位或并行输入；<br>74LS165的时钟禁止端（第15脚）接地，表示允许时钟输入。<br>当扩展多个8位输入口时，相邻两芯片的首尾（$$Q_H$$与SIN）相连。</p>
+<p>在方式0，SCON中的<strong>TB8</strong>、<strong>RB8</strong>位没有用到，发送或接收完8位数据由硬件使TI或RI中断标志位置“1”，CPU响应<strong>TI</strong>或<strong>RI</strong>中断，在中断服务程序中向发送SBUF中送入下一个要发送的数据或从接收SBUF中把接收到的1B存入内部RAM中。<br>注意，TI或RI标志位必须由软件清“0”，采用如下指令：<br>        <code>CLR    TI    ；TI位清“0”</code><br>        <code>CLR    RI     ；RI位清“0”</code><br>方式0时，SM2位（多机通信控制位）必须为0。</p>
+</blockquote>
+<h2 id="方式1"><a href="#方式1" class="headerlink" title="方式1"></a>方式1</h2><p>方式1为双机串行通信方式。</p>
+<p>方式1一帧数据为10位，1个起始位（0），8个数据位，1个停止位（1），先发送或接收最低位。帧格式如图所示。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513190806623.png" alt="方式1的帧格式" class="lazyload"></p>
+<p>方式1为波特率可变的8位异步通信接口。波特率由下式确定：<br>    $${方式1波特率} = \frac{2^{SMOD}}{32}*定时器T1的溢出率$$<br>式中，<strong>SMOD</strong>为<strong>PCON</strong>寄存器的最高位的值（0或1）。</p>
+<h3 id="方式1发送"><a href="#方式1发送" class="headerlink" title="方式1发送"></a>方式1发送</h3><p>​    方式1输出时，数据位由<strong>TXD</strong>端输出，发送一帧信息为10位：1位起始位0，8位数据位（先低位）和1位停止位1。当CPU执行一条数据写SBUF的指令，就启动发送。发送时序如图，图中TX时钟的频率就是发送的波特率。<br>​    发送开始时，内部发送控制信号 变为有效，将起始位向TXD脚（P3.1）输出，此后每经过一个TX时钟周期，便产生一个移位脉冲，并由TXD引脚输出一个数据位。8位数据位全部发送完毕后，中断标志位<strong>TI</strong>置1。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513191200642.png" alt="方式1发送时序" class="lazyload"></p>
+<h3 id="方式1-接收"><a href="#方式1-接收" class="headerlink" title="方式1 接收"></a>方式1 接收</h3><p>​    方式1接收时（<strong>REN</strong> = 1），数据从<strong>RXD</strong>（P3.0）引脚输入。当检测到起始位的负跳变，则开始接收。接收时序见图。<br>​    接收时，定时控制信号有两种，一种是接收移位时钟（RX时钟），它的频率和传送的波特率相同，另一种是位检测器采样脉冲，频率是RX时钟的16倍。以波特率的16倍速率采样<strong>RXD</strong>脚状态。<strong>当采样到RXD端从1到0的负跳变时就启动检测器，接收的值是3次连续采样（第7、8、9个脉冲时采样）取两次相同的值，以确认起始位（负跳变）的开始，较好地消除干扰引起的影响。</strong></p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513191302721.png" alt="方式1接收时序" class="lazyload"></p>
+<center>方式1接收时序
+
+
+<p>当确认起始位有效时，开始接收一帧信息。每一位数据，也都进行<strong>3次连续采样</strong>（第7、8、9个脉冲采样），接收的值是3次采样中至少两次相同的值。当一帧数据接收完毕后，同时满足以下两个条件，接收才有效。<br>（1） <strong>RI</strong> = 0，即上一帧数据接收完成时，RI = 1发出的中断请求已被响应，SBUF中的数据已被取走，说明“接收SBUF”已空。</p>
+<p>（2）<strong>SM2</strong> = 0或收到的停止位 = 1（方式1时，停止位已进入RB8），则将接收到的数据装入SBUF和RB8（装入的是停止位），且中断标志RI置“1”。<br>若不同时满足两个条件，收的数据不能装入SBUF，该帧数据将丢弃。</p>
+<h2 id="方式2"><a href="#方式2" class="headerlink" title="方式2"></a>方式2</h2><p>方式2和方式3，为9位异步通信接口。每帧数据为11位，1位起始位0，8位数据位（先低位），1位可程控为1或0的第9位数据和1位停止位。方式2、方式3帧格式如图所示。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513191616938.png" alt="方式2、方式3的帧格式" class="lazyload"></p>
+<p>$$ {方式2的波特率} = \frac{2^{SMOD}}{64}*f_{OSC}$$</p>
+<h3 id="方式2发送"><a href="#方式2发送" class="headerlink" title="方式2发送"></a>方式2发送</h3><p>发送前，先根据通信协议由软件设置<strong>TB8</strong>（如奇偶校验位或多机通信的地址/数据标志位），然后将要发送的数据写入SBUF，即启动发送。TB8自动装入第9位数据位，逐一发送。发送完毕，使TI位置“1”。<br>发送时序如图所示。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513191912351.png" alt="方式2和方式3发送时序" class="lazyload"></p>
+<h3 id="方式2接收"><a href="#方式2接收" class="headerlink" title="方式2接收"></a>方式2接收</h3><p><strong>SM0</strong>、<strong>SM1=10</strong>，且<strong>REN</strong> = 1时，以方式2接收数据。数据由RXD端输入，接收11位信息。当位检测逻辑采样到RXD的负跳变，判断起始位有效，便开始接收一帧信息。在接收完第9位数据后，需满足以下两个条件，才能将接收到的数据送入SBUF（接收缓冲器）。</p>
+<ol>
+<li>RI = 0，意味着接收缓冲器为空。</li>
+<li>SM2 = 0或接收到的第9位数据位RB8 = 1。</li>
+</ol>
+<p>当满足上述两个条件时，收到的数据送SBUF（接收缓冲器），第9位数据送入RB8，且RI置“1”。若不满足这两个条件，接收的信息将被丢弃。<br>串行口方式2和方式3接收时序如图所示。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513192210990.png" alt="方式2和方式3接收时序" class="lazyload"></p>
+<h2 id="方式3"><a href="#方式3" class="headerlink" title="方式3"></a>方式3</h2><p>SM0、SM1=11时，方式3。为波特率可变的9位异步通信方式，除了波特率外，方式3和方式2相同。</p>
+<p>$$ {方式3波特率} =   \frac{2^{SMOD}}{32}*{定时器T1的溢出率}$$</p>
+<h1 id="三、多机通信"><a href="#三、多机通信" class="headerlink" title="三、多机通信"></a>三、多机通信</h1><p>多个单片机可利用串行口进行多机通信，经常采用如图所示的<strong>主从式结构</strong>。系统中有1个主机（单片机或其他有串行接口的微机）和多个单片机组成的从机系统。主机的<strong>RXD</strong>与所有从机的<strong>TXD</strong>端相连，<strong>TXD</strong>与所有从机的<strong>RXD</strong>端相连。从机地址分别为01H、02H和03H。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/image-20210513192515880.png" alt="多机通信系统示意图" class="lazyload"></p>
+<p>​    主从式是指多机系统中，只有一个主机，其余全是从机。主机发送的信息可以被所有从机接收，任何一个从机发送的信息，只能由主机接收。从机和从机之间不能进行直接通信，只能经主机才能实现。<br>​    多机通信的工作原理：<br>​    要保证主机与所选择的从机通信，须保证串口有识别功能。<strong>SCON</strong>中的<strong>SM2</strong>位就是为满足这一条件设置的多机通信控制位。其工作原理是在串行口以方式2（或方式3）接收时，若SM2 = 1，则表示进行多机通信，可能以下<strong>两种情况</strong>：</p>
+<ol>
+<li>从机接收到的主机发来的<strong>第9位数据RB8=1</strong>时，前8位数据才装入SBUF，并置中断标志RI = 1，向CPU发出中断请求。<br>在中断服务程序中，从机把接收到的SBUF中的数据存入数据缓冲区中。</li>
+<li>如果从机接收到的第9位数据RB8=0时，则不产生中断标志RI=1，不引起中断，从机不接收主机发来的数据。</li>
+</ol>
+<blockquote>
+<p>若SM2 = 0，则接收的第9位数据不论是0还是1，从机都将产生RI = 1中断标志，接收到的数据装入SBUF中。</p>
+</blockquote>
+<h2 id="多机通信的工作过程"><a href="#多机通信的工作过程" class="headerlink" title="多机通信的工作过程"></a>多机通信的工作过程</h2><ol>
+<li><p>各从机初始化程序允许从机的串行口中断，将串行口编程为方式2或方式3接收，即9位异步通信方式，且SM2和REN位置“1”，使从机处于多机通信且<strong>只接收地址帧</strong>的状态。</p>
+</li>
+<li><p>在主机和某个从机通信之前，<strong>先将从机地址（即准备接收数据的从机）发送给各个从机</strong>，接着才传送数据（或命令），主机发出的<strong>地址帧</strong>信息的<strong>第9位为1</strong>，<strong>数据（或命令）</strong>帧的<strong>第9位为0</strong>。当主机向各从机发送地址帧时，各从机的串行口接收到的第9位信息RB8为1，且由于各从机的SM2=1，则RI置“1”，各从机响应中断，在中断服务子程序中，判断主机送来的地址是否和本机地址相符合，若为本机地址，则该从机SM2位清“0”，准备接收主机的数据或命令；若地址不相符，则保持SM2 = 1。</p>
+</li>
+<li><p>接着主机发送数据（或命令）帧，<strong>数据帧的第9位为0</strong>。此时各从机接收到的RB8 = 0。<br>只有与前面地址相符合的从机（即SM2位已清“0”的从机）才能激活中断标志位RI，从而进入中断服务程序，接收主机发来的数据（或命令）；<strong>与主机发来的地址不相符的从机，由于SM2保持为1，又RB8 = 0，因此不能激活中断标志RI，就不能接受主机发来的数据帧。</strong>从而保证主机与从机间通信的正确性。此时主机与建立联系的从机已经设置为单机通信模式，即在整个通信中，通信的双方都要保持发送数据的第9位（即TB8位）为0，防止其他的从机误接收数据。</p>
+</li>
+<li><p>结束数据通信并为下一次的多机通信做好准备。在多机系统，每个从机都被赋予唯一的地址。例如，上图三个从机的地址可设为：01H、02H、03H。<br>还要预留1~2个<strong>“广播地址”</strong>，它是所有从机共有的地址，例如将“广播地址”设为00H。<strong>当主机与从机的数据通信结束后，一定要将从机再设置为多机通信模式，以便进行下一次的多机通信。</strong></p>
+<p>这时要求与主机正在进行数据传输的从机必须随时注意，一旦接收的数据第9位（RB8）为“1”，说明主机传送的不再是数据，而是地址，这个地址就有可能是“广播地址”。<br>当收到“广播地址”后，便将从机的通信模式再设置成多机模式，为下一次的多机通信做好准备。</p>
+</li>
+</ol>
+</center>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="汇编语言程序设计" class="lazyload">
+                    <h1>汇编语言程序设计</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2021年05月13日</a>
+            <a><i class="nexmoefont icon-areachart"></i>3.8k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 16 分钟</a>
+        </div>
+
+        <article>
+            
+                <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><h2 id="汇编语言语句和格式"><a href="#汇编语言语句和格式" class="headerlink" title="汇编语言语句和格式"></a>汇编语言语句和格式</h2><p>两种基本语句：指令语句和伪指令语句。</p>
+<ol>
+<li><p>指令语句 </p>
+<p>每一指令语句在汇编时都产生一个指令代码（机器代码），执行该指令代码对应着机器的一种操作。</p>
+</li>
+<li><p>伪指令语句<br>是控制汇编（翻译）过程的一些控制命令。在汇编时没有机器代码与之对应。</p>
+</li>
+</ol>
+<p>汇编语言语句是符合典型的汇编语言的四分段格式：</p>
+<table>
+<thead>
+<tr>
+<th><strong>标号字段</strong>  <strong>(LABLE)</strong></th>
+<th><strong>操作码字段</strong>  <strong>(OPCODE)</strong></th>
+<th><strong>操作数字段</strong>  <strong>(OPRAND)</strong></th>
+<th><strong>注释字段</strong>  <strong>(COMMENT)</strong></th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>标号与操作码间要有冒号“：”分隔；</li>
+<li>操作码与操作数的分界符是空格；</li>
+<li>双操作数间用逗号相隔；</li>
+<li>操作数和注释间的分界符用分号“；”。</li>
+<li>任何语句必须有操作码字段。</li>
+</ul>
+<blockquote>
+<p>下面是一段程序的四分段书写格式。<br>标号       操作码 操作数            注释字段<br>START：  MOV    A，   #00H              ；0→A<br>                 MOV    R1， #10                   ；10→R1<br>                 MOV    R2，  #00000011B       ；03H→R2<br>LOOP：   ADD    A，R2                   ；(A)+(R2)→A<br>                 DJNZ    R1，LOOP  ；R1减1不为零，则跳LOOP处<br>                 NOP<br>HERE：    SJMP    HERE</p>
+</blockquote>
+<h2 id="基本语法规则"><a href="#基本语法规则" class="headerlink" title="基本语法规则"></a>基本语法规则</h2><ol>
+<li><p><strong>标号字段</strong></p>
+<p>语句所在地址的标志符号，才能被访问。如标号“START”和“LOOP”等。有关标号规定如下：</p>
+<ol>
+<li>标号后必须跟冒号“：”； </li>
+<li>标号由1～8个ASCII码字符组成，第1个字符必须是字母；</li>
+<li>同一标号在一个程序中只能定义一次，不能重复定义；</li>
+<li>不能使用汇编语言已经定义的符号作为标号，如指令助记符、伪指令以及寄存器的符号名称等。</li>
+<li>标号的有无，取决于本程序中其他语句是否访问该语句。如无其他语句访问，则该语句前不需标号。</li>
+</ol>
+</li>
+<li><p><strong>操作码字段</strong></p>
+<p>规定了语句执行的操作，是汇编语言指令中唯一不能空缺的部分。</p>
+</li>
+<li><p><strong>操作数字段</strong></p>
+<p>指令的操作数或操作数地址。<br>在本字段中，操作数的个数因指令的不同而不同。通常有单操作数、双操作数和无操作数三种情况。<br>如果是多操作数，则操作数之间要以逗号隔开。</p>
+</li>
+</ol>
+<h2 id="常用伪指令"><a href="#常用伪指令" class="headerlink" title="常用伪指令"></a>常用伪指令</h2><p>​    在汇编语言源程序中应有向汇编程序发出的指示信息，告诉它如何完成汇编工作，这是通过伪指令来实现。<br>​    伪指令不属于指令系统中的汇编语言指令，它是程序员发给汇编程序的命令，也称为汇编程序控制命令。<br>​    只有在汇编前的源程序中才有伪指令。 “伪”体现在汇编后，伪指令没有相应的机器代码产生。<br>​    伪指令具有控制汇编程序的输入/输出、定义数据和符号、条件汇编、分配存储空间等功能。</p>
+<ol>
+<li><p><strong>ORG（ORiGin）汇编起始地址命令</strong><br>   源程序的开始，用一条ORG伪指令规定程序的起始地址。如果不用ORG，则汇编得到的目标程序将从0000H地址开始。例如：</p>
+<blockquote>
+<p>ORG    2000H<br>START：    MOV    A，#00H</p>
+<pre><code>           ……
+</code></pre>
+</blockquote>
+<p>规定标号START代表地址为2000H开始。<br>一源程序可多次用ORG指令，规定程序段的起始地址。但是，地址必须由小到大排列，且不能交叉、重叠。</p>
+</li>
+<li><p><strong>END(END of assembly)汇编终止命令</strong><br>源程序结束标志，终止源程序的汇编工作。<strong>整个源程序中只能有一条END命令，且位于程序的最后。</strong><br>如果END出现在程序中间，其后的源程序，将不进行汇编处理。</p>
+</li>
+<li><p><strong>EQU（EQUate）标号赋值命令</strong><br>用于给标号赋值。赋值后，标号值在整个程序有效。<br>例如：</p>
+<blockquote>
+<p>TEST：    EQU  2000H    </p>
+</blockquote>
+<p>表示TEST=2000H，汇编时，凡是遇到TEST时，均以2000H来代替。</p>
+</li>
+<li><p><strong>DB（Define Byte）定义数据字节命令</strong><br>用于从指定的地址开始，在程序存储器连续单元中定义字节数据。例如：</p>
+<p><code>ORG    2000H</code><br><code>DB    30H，40H，24，&quot;C&quot;，&quot;B&quot;</code></p>
+<p>汇编后<br><code>(2000H)=30H (2001H)=40H (2002H)=18H(十进制数24) (2003H)=43H(字符“C”的ASCII码) (2004H)= 42H(字符“B”的ASCII码)</code></p>
+<p>显然，DB功能是从指定单元开始定义（存储）若干字节，十进制数自然转换成十六进制数，字母按ASCII码存储。</p>
+</li>
+<li><p><strong>DW（Define Word）定义数据字命令</strong><br>该命令用于从指定的地址开始，在程序存储器的连续单元中定义16位的数据字。例如：<br><code>ORG    2000H DW    1246H，7BH，10</code><br>汇编后<br><code>(2000H)=12H        ；第1个字</code><br><code>(2001H)=46H</code><br><code>(2002H)=00H        ；第2个字</code></p>
+<p><code>(2003H)=7BH (2004H)=00H        ；第3个字 (2005H)=0AH</code></p>
+</li>
+<li><p><strong>DS（Define Storage）定义存储区命令</strong><br>从指定地址开始，保留指定数目的字节单元作为存储区，供程序运行使用。例如：</p>
+<pre><code>    `TABEL：DS    10`
+</code></pre>
+<p>表示从TABEL代表的地址开始，保留10个连续的地址单元。又例如：</p>
+<pre><code>    `ORG    2000H
+    DS    10 H`
+</code></pre>
+<p>表示从2000H地址开始，保留16个连续地址单元。</p>
+<p>注意：DB、DW和DS命令只能对程序存储器有效，不能对数据存储器使用。</p>
+</li>
+<li><p><strong>BIT 位定义命令</strong><br>用于给字符名称赋以位地址，位地址可以是绝对位地址，也可是符号地址。例如：</p>
+<pre><code>QA    BIT  P1.6
+</code></pre>
+<p>功能是把P1.6的位地址赋给变量QA。</p>
+</li>
+</ol>
+<h1 id="二、设计举例"><a href="#二、设计举例" class="headerlink" title="二、设计举例"></a>二、设计举例</h1><h2 id="子程序的设计"><a href="#子程序的设计" class="headerlink" title="子程序的设计"></a>子程序的设计</h2><ol>
+<li> 子程序的入口地址，前必须有标号。</li>
+<li>主程序调用子程序，是通过调用指令来实现。有两条子程序调用指令：<ol>
+<li><strong>绝对调用指令ACALL addr11</strong>。双字节，addr11指出了调用的目的地址，PC中16位地址中的高5位不变，被调用的子程序的首地址与绝对调用指令的下一条指令的高5位地址相同，即只能在同一个2KB区内。</li>
+<li><strong>长调用指令LCALL addr16。</strong>三字节，addr16为直接调用的目的地址，子程序可放在64KB程序存储器区任意位置</li>
+</ol>
+</li>
+<li>子程序必须用到堆栈，用来保护断点和现场保护。</li>
+<li>子程序返回主程序时，最后一条指令必须是RET指令，功能是把堆栈中的断点地址弹出送入PC指针中，从而实现子程序返回后从主程序断点处继续执行主程序。</li>
+<li>子程序可以嵌套，即主程序可调用子程序，子程序又可以调用另外的子程序。</li>
+</ol>
+<h3 id="子程序的基本结构"><a href="#子程序的基本结构" class="headerlink" title="子程序的基本结构"></a>子程序的基本结构</h3><p>典型的子程序的基本结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">MAIN：	…… 			；MAIN为主程序入口标号</span><br><span class="line">		……</span><br><span class="line">		LCALL  	SUB	；调用子程序SUB</span><br><span class="line">   		……</span><br><span class="line">		……</span><br><span class="line">子程序</span><br><span class="line">SUB：	PUSH  	PSW	；现场保护 	  </span><br><span class="line"> 		PUSH  	Acc		</span><br><span class="line">		子程序处理程序段</span><br><span class="line"></span><br><span class="line">		POP  	Acc	 ；现场恢复，注意要先进后出</span><br><span class="line">		POP  	PSW		 </span><br><span class="line">		RET		；最后一条指令必须为RET</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="查表程序设计"><a href="#查表程序设计" class="headerlink" title="查表程序设计"></a>查表程序设计</h3><p>查表程序是一种常用的程序。避免复杂的运算或转换过程，可完成数据补偿、修正、计算、转换等各种功能，具有程序简单、执行速度快等优点。<br>查表是根据自变量x，在表格寻找y，使y=f(x)。单片机中，数据表格存放于程序存储器内，在执行查表指令时，发出读程序存储器选通脉冲 。两条查表指令：</p>
+<ol>
+<li>MOVC     A，@A+DPTR</li>
+<li>MOVC     A，@A+PC</li>
+</ol>
+<p>两条指令的功能完全相同，具体使用有差别。<br><strong>指令“MOVC  A，@A+DPTR”</strong></p>
+<p> 把A的内容与DPTR的内容相加，结果为某一程序存储单元的地址，然后把该地址单元的内容送到A中。<br><strong>指令“MOVC  A，@A+PC”</strong> </p>
+<p>PC的内容与A的内容相加后所得的数作为某一程序存储器单元的地址，根据地址取出程序存储器相应单元中的内容送到累加器A，指令执行后，PC的内容不发生变化，仍指向该查表指令的下一条指令。<br><strong>优点</strong>：在于预处理较少且不影响其他特殊功能寄存器的值，不必保护其他特殊功能寄存器。</p>
+<p><strong>缺点</strong>：在于该表格只能存放在这条指令的地址X3X2X1X0以下00～FFH之中，即只能存放在地址范围X3X2X1X0 +1～ X3X2X1X0 +100H中，这就使得表格所在的程序空间受到了限制。</p>
+<blockquote>
+<p>设计一子程序，功能是根据累加器A中的数x（0～9之间）查x的平方表y，根据x的值查出相应的平方y。本例中的x和y均为单字节数。<br>    地 址                  子程序<br>Y3Y2Y1Y0        ADD     A，#01H<br>Y3Y2Y1Y0+2    MOVC  A，@A+PC<br>Y3Y2Y1Y0+3    RET<br>Y3Y2Y1Y0+4    DB  00H，01H，04H，09H，10H</p>
+<p>​                        DB  19H，24H，31H，40H，51H<br>​                        ；数0～9的平方表</p>
+</blockquote>
+<p><strong>指令“ADD  A，#01H”的作用</strong>是A中的内容加上 “01H”， “01H”即为查表指令与平方表之间的“RET”指令所占的字节数。加上 “01H”后，可保证PC指向表首，累加器A中原来的内容仅是从表首开始向下查找多少个单元。<br> <strong>在进入程序前，A的内容在00～09H间</strong>，如A为02H，它的平方为04H，可根据A的内容查出x的平方<br> 指令<strong>“MOVC  A，@A+DPTR”</strong> 应用范围较广，使用该指令时不必计算偏移量，优点是表格可以设在64KB程序存储器空间内的任何地方，而不像“MOVC  A，@A+PC”那样只设在PC下面的256个单元中，所以使用较方便。</p>
+<p>如果DPTR已被使用，则在查表前必须保护DPTR，且结束后恢复DPTR，上述例子可改成如下形式：</p>
+<blockquote>
+<p>​                PUSH    DPH                  ；保存DPH<br>               PUSH    DPL                 ；保存DPL<br>               MOV    DPTR，#TAB1<br>​                MOVC     A，@A+DPTR<br>​                POP     DPL                  ；恢复DPL<br>​                POP     DPH                  ；恢复DPH<br>​                RET<br>TAB1：   DB      00H，01H，04H，09H，10H；平方表<br>               DB      19H，24H，31H，40H，51H</p>
+</blockquote>
+<blockquote>
+<p><strong>有一巡回检测报警装置，需对16路（x）输入进行检测，每路有一个最大允许值（y），为双字节数。需根据测量的路数（x），查表找出对应该路的最大允许值（y），看输入值是否大于最大允许值，如果大于就报警。</strong><br><strong>取路数为x（0≤x≤15），y为最大允许值，放在表格中。设进入查表程序前，假设路数x已放于R2中，查表后该路的最大允许值y放于R3R4中。查表的查表程序如下：</strong></p>
+<p> TB3：     MOV   A，R2<br>                ADD    A，R2           ；(R2)*2→(A)<br>                MOV   R3，A           ；保存指针<br>                ADD    A，#6            ；加偏移量<br>                MOVC  A，@A+PC      ；查第一字节<br>                XCH       A，R3<br>               ADD       A，#3<br>               MOVC  A，@A+PC      ；查第二字节<br>               MOV    R4，A<br>               RET<br>TAB3：  DW        1520，3721，42645，7580 ；最大值表<br>              DW        3483，32657，883，9943<br>              DW        10000，40511，6758，8931<br>              DW        4468，5871，13284，27808</p>
+</blockquote>
+<p><strong>表格长度不能超过256B</strong>，且只能存放于“MOVC A，@A+PC”指令以下的256个单元中，如需把表格放在程序存储器空间的任何地方，应使用指令“MOVC A，@A+DPTR”。</p>
+<blockquote>
+<p>以AT89S51为核心的温度控制器，温度传感器输出的电压与温度为非线性关系，传感器输出电压已由A/D转换为10位二进制数。测得的不同温度下的电压值数据构成一个表，表中温度值为y（双字节无符号数），x（双字节无符号数）为电压值数据。设测得的电压值x放入R2R3中，根据电压值x，查找对应的温度值y（表），仍放入R2R3中。<br>   参考程序如下：</p>
+<p> LTB2：         MOV    DPTR，#TAB2<br>                    MOV    A，R3<br>                    CLR    C<br>                     RLC    A<br>                     MOV    R3，A<br>                     XCH    A，R2<br>                     RLC    A<br>                     XCH    R2，A<br>                     ADD    A，DPL  ；(R2R3)+(DPTR)→(DPTR)<br>                     MOV    DPL，A<br>                     MOV    A，DPH<br>                     ADDC  A，R2<br>                     MOV    DPH，A<br>                     CLR    A</p>
+<p>​                    MOVC    A，@A+DPTR ；查第一字节<br>​                    MOV    R2，A                ；第一字节存入R2中<br>​                    CLR    A<br>​                    INC    DPTR<br>​                    MOVC  A，@A+DPTR   ；查第二字节<br>​                    MOV    R3，A          ；第二字节存入R3中<br>​                    RET</p>
+<p>TAB2：      DW    …， … ，…      ；温度值表</p>
+</blockquote>
+<p>由于使用指令“MOVC A，@A+DPTR”，表TAB2可放入64KB程序存储器空间任何位置，表格长度可大于256B。</p>
+<h3 id="关键字查找程序设计"><a href="#关键字查找程序设计" class="headerlink" title="关键字查找程序设计"></a>关键字查找程序设计</h3><p>在表中查找关键字，也称数据检索。有两种方法，即顺序检索和对分检索。</p>
+<h4 id="顺序检索"><a href="#顺序检索" class="headerlink" title="顺序检索"></a>顺序检索</h4><p>要检索的表是无序的，检索时只能从第1项开始逐项查找，判所取数据是否与关键字相等。</p>
+<blockquote>
+<p><strong>从50个字节无序表中查找关键字“xxH”。</strong><br>ORG    1000H<br>MOV    30H，#xxH    ；关键字xxH送30H单元<br>MOV    R1，#50    ；查找次数送R1<br>MOV    A，#14        ；修正值送A<br>MOV   DPTR，#TAB4    ；表首地址送DPTR</p>
+<p>LOOP：    PUSH   Acc<br>                 MOVC  A，@ A+PC    ；查表结果送A<br>                 CJNE  A，40H，LOOP1；(40H)不等于关键字则转LOOP1<br>                 MOV   R2，DPH；已查到关键字，把该字地址送R2，R3<br>                MOV   R3，DPL<br>DONE：   RET<br>LOOP1：POP        Acc        ；修正值弹出<br>               INC        A        ；A+1→A<br>               INC        DPTR        ；修改数据指针DPTR<br>               DJNZ   R1，LOOP    ；R1≠0，未查完，继续查找<br>               MOV    R2，#00H    ；R1=0，R2和R3清“0”<br>               MOV    R3，#00H    ；表中50个数已查完<br>               AJMP    DONE        ；从子程序返回<br>TAB4：  DB     …，…，…    ；50个无序数据表</p>
+</blockquote>
+<h4 id="对分检索"><a href="#对分检索" class="headerlink" title="对分检索"></a>对分检索</h4><p>对分检索的前提是检索的数据表<strong>已经排好序</strong>，以便于按照对分原则取数。如何进行数据排序，稍后介绍。<br><strong>对分检索的方法：取数据表中间位置的数与关键字进行比较，如相等，则查找结束；</strong><br>如果<strong>取数大于关键字</strong>，则下次对分检索的范围是从数据区起点到本次取数处。<br>如果<strong>取数小于关键字</strong>，则下次对分检索的范围是从本次取数数据区起点到数据区终点。依此类推，逐渐缩小检索范围，减少次数，大大提高查找速度。</p>
+<h4 id="数据极值查找程序设计"><a href="#数据极值查找程序设计" class="headerlink" title="数据极值查找程序设计"></a>数据极值查找程序设计</h4><p>进行数值大小的比较，从一批数据中找出<strong>最大值（或最小值）</strong>并存于某一单元中。</p>
+<blockquote>
+<p><strong>片内RAM中存放一批数据，查找出最大值并存放于首地址中。设R0中存放首地址，R2中存放字节数，程序框图如图4-1所示。程序如下：</strong><br>                MOV      R2，n        ；n为要比较的数据字节数<br>                MOV       A，R0        ；存首地址指针<br>                MOV       R1，A<br>                DEC       R2<br>                MOV       A，@R1</p>
+<p>LOOP：  MOV      R3， A<br>                DEC       R1<br>                CLR       C<br>                SUBB  A，@R1    ；两个数比较<br>                JNC       LOOP1    ；C=0，A中的数大，跳LOOP1<br>                MOV   A，@R1        ；C=1，则大数送A<br>                SJMP   LOOP2<br>LOOP1：MOV       A，R3<br>LOOP2：DJNZ      R2， LOOP    ；是否比较结束？<br>                MOV       @R0， A    ；存最大数<br>               RET</p>
+</blockquote>
+<h4 id="数据排序程序设计"><a href="#数据排序程序设计" class="headerlink" title="数据排序程序设计"></a>数据排序程序设计</h4><p>将一批数由小到大（<strong>升序</strong>）排列，或由大到小（<strong>降序</strong>）排列。<br>最常用的数据排序算法是<strong>冒泡法</strong>，是相邻数互换的排序方法，因其过程类似水中气泡上浮，故称冒泡法。<br>排序时，<strong>从前向后进行相邻两个数的比较，如果数据的大小次序与要求的顺序不符时</strong>，就将<strong>两个数互换</strong>；否则，顺序符合要求就不互换。如果进行升序排序，应通过这种相邻数互换方法，使<strong>小数向前移，大数向后移</strong>。<br>如此从前向后进行一次次<strong>相邻数互换（冒泡）</strong>，就会把这批数据的最大数排到最后，次大数排在倒数第二的位置</p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="Markdown的一些语法说明" class="lazyload">
+                    <h1>Markdown的一些语法说明</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2021年04月21日</a>
+            <a><i class="nexmoefont icon-areachart"></i>516 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+        </div>
+
+        <article>
+            
+                <h1 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、格式"><a href="#二、格式" class="headerlink" title="二、格式"></a>二、格式</h1><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p><em>斜体文本</em><br><strong>粗体文本</strong><br><strong>粗体文本</strong><br><em><strong>粗斜体文本</strong></em><br><em><strong>粗斜体文本</strong></em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*斜体文本*</span><br><span class="line">_斜体文本_</span><br><span class="line">**粗体文本**</span><br><span class="line">__粗体文本__</span><br><span class="line">***粗斜体文本***</span><br><span class="line">___粗斜体文本___</span><br></pre></td></tr></table></figure>
+
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">***</span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">- - -</span><br><span class="line"></span><br><span class="line">----------</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p><del>BAIDU.COM</del></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GOOGLE.COM</span><br><span class="line">~~BAIDU.COM~~</span><br></pre></td></tr></table></figure>
+
+<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><p><u>带下划线文本</u></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;u&gt;带下划线文本&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><p> <a href="666">^123</a> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[^要注明的文本]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[^123]: 666</span><br><span class="line"></span><br><span class="line"> [^123] </span><br><span class="line"> ps： 脚注前需要有字符。</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、列表"><a href="#三、列表" class="headerlink" title="三、列表"></a>三、列表</h1><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>使用   *****     或   <strong>+</strong>   或   -   </p>
+<ul>
+<li><p>1</p>
+</li>
+<li><p>2</p>
+</li>
+<li><p>3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line">* 第三项</span><br><span class="line"></span><br><span class="line">+ 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">+ 第三项</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 第一项</span><br><span class="line">- 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h2><p>加入四个空格即可</p>
+<ol>
+<li>1<ul>
+<li>1</li>
+<li>2</li>
+</ul>
+</li>
+<li>1</li>
+<li>1</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 1</span><br><span class="line">    - 1</span><br><span class="line">    - 2</span><br><span class="line">2. 1</span><br><span class="line">    - 1</span><br><span class="line">    - 2</span><br></pre></td></tr></table></figure>
+
+<h1 id="四、区块"><a href="#四、区块" class="headerlink" title="四、区块"></a>四、区块</h1><h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><blockquote>
+<p>123</p>
+<p>123</p>
+<p>123</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 123</span><br><span class="line">&gt; 123</span><br><span class="line">&gt; 123</span><br></pre></td></tr></table></figure>
+
+<h2 id="区块嵌套"><a href="#区块嵌套" class="headerlink" title="区块嵌套"></a>区块嵌套</h2><blockquote>
+<p>1</p>
+<blockquote>
+<p>2</p>
+<blockquote>
+<p>3</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;1</span><br><span class="line">&gt; &gt; 2</span><br><span class="line">&gt; &gt; 3</span><br></pre></td></tr></table></figure>
+
+<h2 id="区块中使用列表"><a href="#区块中使用列表" class="headerlink" title="区块中使用列表"></a>区块中使用列表</h2><blockquote>
+<ol>
+<li>1</li>
+<li>2<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; 1. 1</span><br><span class="line">&gt; 2. 2</span><br><span class="line">&gt; + 1</span><br><span class="line">&gt; + 2</span><br><span class="line">&gt; + 3</span><br></pre></td></tr></table></figure>
+
+<h2 id="列表中使用区块"><a href="#列表中使用区块" class="headerlink" title="列表中使用区块"></a>列表中使用区块</h2><ol>
+<li></li>
+<li><p>2</p>
+<blockquote>
+<p>1</p>
+<p>2</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="五、代码"><a href="#五、代码" class="headerlink" title="五、代码"></a>五、代码</h1><p>使用 ` 包裹代码片段或函数：</p>
+<p><code>print()</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;printf()&#96; </span><br></pre></td></tr></table></figure>
+
+<p>使用 ``` 包裹一段代码，可以制订一种语言</p>
+<h1 id="六、链接"><a href="#六、链接" class="headerlink" title="六、链接"></a>六、链接</h1><h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="www.baidu.con">百度</a></p>
+<p>或者</p>
+<p>&lt;<a target="_blank" rel="noopener" href="http://www.baidu.com&gt;/">www.baidu.com&gt;</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[链接名称](链接地址)</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">&lt;链接地址&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="高级链接"><a href="#高级链接" class="headerlink" title="高级链接"></a>高级链接</h2><p>这个链接用 1 作为网址变量 <a target="_blank" rel="noopener" href="http://www.google.com/">Google</a><br>这个链接用 runoob 作为网址变量 <a target="_blank" rel="noopener" href="http://www.runoob.com/">Runoob</a><br>然后在文档的结尾为变量赋值（网址）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">这个链接用 1 作为网址变量 [Google][1]</span><br><span class="line">这个链接用 runoob 作为网址变量 [Runoob][runoob]</span><br><span class="line">然后在文档的结尾为变量赋值（网址）</span><br><span class="line"></span><br><span class="line">  [1]: http:&#x2F;&#x2F;www.google.com&#x2F;</span><br><span class="line">  [runoob]: http:&#x2F;&#x2F;www.runoob.com&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h1 id="七、图片"><a href="#七、图片" class="headerlink" title="七、图片"></a>七、图片</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![alt 属性文本](图片地址)</span><br><span class="line"></span><br><span class="line">![alt 属性文本](图片地址 &quot;可选标题&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h1><p>使用 — 分割表头</p>
+<p>使用 -: 右对齐</p>
+<p>使用 :- 左对齐</p>
+<p>使用 :-: 居中对齐</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br></pre></td></tr></table></figure>
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2021/04/20/hello-world/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="Hello World" class="lazyload">
+                    <h1>Hello World</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2021年04月20日</a>
+            <a><i class="nexmoefont icon-areachart"></i>75 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+            
+        </article>
+    </div>
+    
+</section>
+
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool"> 
+              
+                
+              
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
 <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
+	hljs.initHighlightingOnLoad();
 </script>
 
-<script src="/js/insight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
-</div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ 
 
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
-    
-    <em class="page-title-link" data-url="home">Home</em>
-    </h1>
-</div>
+<script src="/js/app.js?v=1621573607353"></script>
 
-                        <div class="main-body-content">
-                            
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
 
-    
-    
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2021" class="archive-year"><i class="icon fa fa-calendar-o"></i>2021</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519195525424.png)" alt="单片机的硬件结构" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yan19.top/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/">0</span>
-    
-</span>
+  
 
 
-    
-</a>
 
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2021-05-20T15:00:53.000Z" itemprop="datePublished">2021-05-20</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/">单片机的硬件结构</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-
-硬件结构、引脚功能、存储器结构、特殊功能寄存器功能、4个并行I/O口的结构和特点，
-复位电路和时钟电路设计,节电工作模式。
-
-
-一、 单片机的硬件组成
-
-CPU（微处理器）8位，包括运算器和控制器两部分，还有位处理功能。
-数据存储器（RAM）128B（52子系列为256B），最多可扩64KB。片内RAM为高速RAM，可加快速度和降低功耗。
-程序存储器（Flash ROM）4KB Flash（A
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png)" alt="单片机的串行口" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yan19.top/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2021-05-13T14:55:29.000Z" itemprop="datePublished">2021-05-13</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/">单片机的串行口</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            一、串行口的结构
-
-有两个物理上独立的接收、发送缓冲器SBUF（属于特殊功能寄存器），可同时发送、接收数据。
-
-发送缓冲器只能写入不能读出
-
-接收缓冲器只能读出不能写入
-
-两个缓冲器共用一个特殊功能寄存器字节地址（99H）。
-
-控制寄存器共有两个：特殊功能寄存器SCON和PCON。
-
-
-串行口控制寄存器SCON字节地址98H，可位寻址，位地址为98H～9FH。
-
-
-SM0、SM1——串行口4种工作
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yan19.top/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2021-05-13T14:53:33.000Z" itemprop="datePublished">2021-05-13</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">汇编语言程序设计</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            一、概述汇编语言语句和格式两种基本语句：指令语句和伪指令语句。
-
-指令语句 
-每一指令语句在汇编时都产生一个指令代码（机器代码），执行该指令代码对应着机器的一种操作。
-
-伪指令语句是控制汇编（翻译）过程的一些控制命令。在汇编时没有机器代码与之对应。
-
-
-汇编语言语句是符合典型的汇编语言的四分段格式：
-
-
-
-标号字段  (LABLE)
-操作码字段  (OPCODE)
-操作数字段  (OPRAND)
-
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yan19.top/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2021-04-21T11:08:05.000Z" itemprop="datePublished">2021-04-21</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/">Markdown的一些语法说明</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            一、标题123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题
-
-二、格式字体斜体文本粗体文本粗体文本粗斜体文本粗斜体文本
-123456*斜体文本*_斜体文本_**粗体文本**__粗体文本__***粗斜体文本***___粗斜体文本___
-
-分割线
-123456789**** * ******- - -----------
-
-删除线BAID
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/04/20/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yan19.top/2021/04/20/hello-world/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2021-04-20T11:58:05.762Z" itemprop="datePublished">2021-04-20</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/04/20/hello-world/">Hello World</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>follow:</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-twitter"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-facebook"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-stack-overflow"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-weibo"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-rss"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
-    <div class="widgets-container">
-        
-            
-                
-
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/image-20210519195525424.png)" alt="单片机的硬件结构" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/05/20/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" class="title">单片机的硬件结构</a></p>
-                            <p class="item-date"><time datetime="2021-05-20T15:00:53.000Z" itemprop="datePublished">2021-05-20</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/image/%E4%B8%B2%E8%A1%8C%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png)" alt="单片机的串行口" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/05/13/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E4%B8%B2%E8%A1%8C%E5%8F%A3/" class="title">单片机的串行口</a></p>
-                            <p class="item-date"><time datetime="2021-05-13T14:55:29.000Z" itemprop="datePublished">2021-05-13</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/05/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="title">汇编语言程序设计</a></p>
-                            <p class="item-date"><time datetime="2021-05-13T14:53:33.000Z" itemprop="datePublished">2021-05-13</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/04/21/Markdown%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/" class="title">Markdown的一些语法说明</a></p>
-                            <p class="item-date"><time datetime="2021-04-21T11:08:05.000Z" itemprop="datePublished">2021-04-21</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/04/20/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/04/20/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2021-04-20T11:58:05.762Z" itemprop="datePublished">2021-04-20</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-            
-                
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">tags</h3>
-        <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">tag cloud</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
-        
-    </div>
-</aside>
-
-                </div>
-            </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2021 alex19</p>
-                
-                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
-                
-            </div>
-            <div class="footer-plugins">
-              
-    
-
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-    </div>
-    
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-
-
-
-
-
-    
-        
-<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-share.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-video.min.js"></script>
-
-    
-    
-        
-<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-
-    
-    
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-        </script>
-        
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
-
-    
-
-    
-    
-    
-
-
-
-<!-- Custom Scripts -->
-
-<script src="/js/main.js"></script>
 
 
 <script type="text/x-mathjax-config">
@@ -800,4 +903,5 @@ Quick
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
+
 </html>
